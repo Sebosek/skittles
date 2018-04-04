@@ -1,0 +1,22 @@
+@import '../../variables/common';
+
+%__control-ripple {
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@mixin __control-ripple-start($opacity: .6, $size: 8*$gap) {
+    height: $size;
+    width: $size;
+    opacity: $opacity;
+}
+
+@mixin __control-ripple-almost-done($opacity: 0) {
+    opacity: $opacity;
+}
+
+@mixin __control-ripple-done($size: 4*$gap) {
+    height: $size;
+    width: $size;
+}

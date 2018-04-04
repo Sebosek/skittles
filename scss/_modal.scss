@@ -1,0 +1,48 @@
+@import 'variables/colors';
+@import 'variables/z-index';
+
+.modal {
+    $padding-vertical: 5*$gap;
+    $padding-horizontal: 5*$gap;
+
+    background: $color__white;
+    border-radius: $gap;
+    box-shadow: 0 $gap 3*$gap rgba($color__blackish, .3);
+    position: fixed;
+    max-width: 1088px;
+    min-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 120px;
+    z-index: $z-index--modal;
+    padding: 0;
+
+    &__title {
+        padding: $padding-vertical $padding-horizontal;
+    }
+
+    &__body {
+        padding: $padding-vertical $padding-horizontal;
+    }
+
+    &__footer {
+        border-top: 1px solid $color__gray;
+        padding: $padding-vertical $padding-horizontal;
+    }
+
+    &__controls {
+        cursor: pointer;
+        font-size: 1.4rem;
+        position: absolute;
+        top: $padding-vertical;
+        right: $padding-horizontal;
+
+        > * {
+            margin-right: 3*$gap;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

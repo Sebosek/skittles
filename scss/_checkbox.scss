@@ -1,0 +1,120 @@
+@import 'utils/animations';
+@import 'utils/transition';
+@import 'utils/typography';
+@import 'variables/grid';
+@import 'variables/colors';
+@import 'variables/typography';
+
+/**
+ * Checkbox
+ *
+ * @atom Checkbox
+ * @section Checkbox
+ * @markup
+ *  <label class="checkbox">
+ *   <input type="checkbox"/>
+ *   <div class="checkbox__control"></div>
+ *   <div class="checkbox__label">Checkbox</div>
+ *  </label>
+ * @modifiers
+ *  .input--spaceless a checkbox without space around
+ */
+.checkbox {
+    $duration: .2s;
+
+    %animation {
+        animation-duration: $duration;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        animation-direction: normal;
+    }
+
+    animation-duration: $duration;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    display: flex;
+    position: relative;
+    margin-bottom: 4*$gap;
+    user-select: none;
+
+    &--inline {
+        display: inline-flex;
+    }
+
+    input[type=checkbox] + &__control {
+        --color-icon: $color__white;
+
+        align-items: center;
+        background: $color__white;
+        border: 1px solid $color__gray--dark;
+        border-radius: $gap;
+        display: inline-flex;
+        height: 4*$gap;
+        justify-content: center;
+        margin-right: 2*$gap;
+        position: relative;
+        width: 4*$gap;
+
+        @include transition(background);
+
+        .icon {
+            transform: scale(0, 0);
+        }
+    }
+
+    &__label {
+        @include define-font($color__blackish--light, 1.4rem, 1, $font-weight--medium);
+
+        align-items: center;
+        display: inline-flex;
+        line-height: normal;
+        height: 16px;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+        .checkbox__control {
+            border: 1px solid $color__blue;
+
+            @include transition(border);
+        }
+    }
+
+    input[type=checkbox] {
+        z-index: -1;
+        opacity: 0;
+        width: 0;
+        margin: 0;
+        display: none;
+    }
+
+    input[type=checkbox]:checked + &__control {
+        @extend %animation;
+        animation-name: checkbox-control-scale;
+        background: $color__blue;
+        border: 1px solid $color__blue;
+
+        .icon {
+            @extend %animation;
+            animation-name: checkbox-icon-scale;
+            transform: scale(1, 1);
+        }
+    }
+
+    &--spaceless {
+        margin-bottom: 0;
+    }
+}
+
+@keyframes checkbox-icon-scale {
+    0% { transform: scale(0, 0); }
+    50% { transform: scale(1.4, 1.4); }
+    100% { transform: scale(1, 1); }
+}
+
+@keyframes checkbox-control-scale {
+    0% { transform: scale(1, 1); }
+    50% { transform: scale(1.4, 1.4); }
+    100% { transform: scale(1, 1); }
+}

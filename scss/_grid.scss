@@ -1,0 +1,62 @@
+@import 'variables/grid';
+
+/**
+ * Structure elements into grid
+ *
+ * @structure Grid
+ * @markup
+ *  <div class="grid">
+ *      <div class="column-12">12</div>
+ *  </div>
+ *  
+ *  <div class="grid">
+ *    <div class="column-3">3</div>
+ *    <div class="column-9">9</div>
+ *  </div>
+ *  
+ *  <div class="grid">
+ *    <div class="column-6">6</div>
+ *    <div class="column-6">6</div>
+ *  </div>
+ *  
+ *  <div class="grid">
+ *    <div class="column-8">8</div>
+ *    <div class="column-4">4</div>
+ *  </div>
+ *  
+ *  <div class="grid">
+ *    <div class="column-9">9</div>
+ *    <div class="column-3">3</div>
+ *  </div>
+ *  
+ *  <div class="grid">
+ *    <div class="column-4">4</div>
+ *    <div class="column-4">4</div>
+ *    <div class="column-4">4</div>
+ *  </div>
+ *  
+ *  <div class="grid">
+ *    <div class="column-3">3</div>
+ *    <div class="column-3">3</div>
+ *    <div class="column-3">3</div>
+ *    <div class="column-3">3</div>
+ *  </div>
+ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat($grid-columns, 1fr);
+    grid-column-gap: $grid-columns__gap;
+
+    @for $i from 1 through $grid-columns {
+        .column-#{$i} {
+            grid-column: span $i;
+            grid-column-end: span $i;
+        }
+    }
+
+    @for $i from 1 through $grid-columns {
+        .column-at-#{$i} {
+            grid-column-start: $i + 1;
+        }
+    }
+}

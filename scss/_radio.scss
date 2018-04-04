@@ -1,0 +1,92 @@
+@import 'utils/transition';
+@import 'utils/typography';
+@import 'variables/grid';
+@import 'variables/colors';
+@import 'variables/typography';
+
+.radio {
+    display: flex;
+    position: relative;
+    margin-bottom: 4*$gap;
+    user-select: none;
+
+    &--inline {
+        display: inline-flex;
+    }
+
+    &--single {
+        .radio__label {
+            padding-left: $gap;
+        }
+    }
+
+    input[type=radio] + &__control {
+        align-items: center;
+        display: inline-flex;
+        border-radius: 50%;
+        height: 4*$gap;
+        justify-content: center;
+        margin-right: 2*$gap;
+        position: relative;
+        width: 4*$gap;
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            background: $color__gray;
+            opacity: 0;
+        }
+
+        &:after {
+            background: $color__white;
+            border: 1px solid $color__gray--dark;
+            border-radius: 50%;
+            color: $color__white;
+            content: '';
+
+            position: absolute;
+            height: 100%;
+            width: 100%;
+
+            @include transition(border);
+        }
+    }
+
+    &__label {
+        @include define-font($color__blackish--light, 1.4rem, 1, $font-weight--medium);
+        
+        align-items: center;
+        display: inline-flex;
+        line-height: normal;
+        height: 16px;
+    }
+
+    &:hover,
+    &:focus-within {
+        .radio__control:after {
+            border: 1px solid $color__blue;
+        }
+    }
+
+    input[type=radio] {
+        z-index: -1;
+        opacity: 0;
+        width: 0;
+        margin: 0;
+    }
+
+    input[type=radio]:checked + &__control:after {
+        border: $gap solid $color__blue;
+
+        animation-name: control-scale;
+        animation-duration: .3s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+    }
+
+    // input[type=radio]:checked + &__control:before {
+    //     @include radio-ripple();
+    // }
+}

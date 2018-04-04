@@ -1,0 +1,32 @@
+@import '../variables/common';
+
+@function __unfold-transition($transition) {
+    $property: all;
+    $duration: $transition__time;
+    $easing: null;
+    $delay: null;
+    $default: ($property, $duration, $easing, $delay);
+
+    $unfolded-transition: ();
+    @for $i from 1 through length($default) {
+        $p: null;
+        @if $i <= length($transition) {
+            $p: nth($transition, $i)
+        } @else {
+            $p: nth($default, $i)
+        }
+        $unfolded-transition: append($unfolded-transition, $p);
+    }
+
+    @return $unfolded-transition;
+}
+
+@mixin transition($transitions...) {
+    $unfolded-transitions: ();
+
+    @each $transition in $transitions {
+        $unfolded-transitions: append($unfolded-transitions, __unfold-transition($transition), comma);
+    }
+
+    transition: $unfolded-transitions;
+}

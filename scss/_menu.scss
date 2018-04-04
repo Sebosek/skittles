@@ -1,0 +1,93 @@
+@import 'variables/colors';
+@import 'variables/common';
+@import 'variables/z-index';
+@import 'utils/swing';
+@import 'utils/transition';
+
+.menu {
+    background: $color__white;
+    border: 1px solid $color__gray;
+    border-radius: $gap;
+    cursor: default;
+    display: inline-block;
+    left: 0;
+    line-height: 1;
+    padding: $gap;
+    position: absolute;
+    top: 100%;
+    z-index: $z-index--menu;
+
+    @include transition(border);
+
+    &__item {
+        color: $color__blackish !important;
+        cursor: pointer;
+        display: block;
+        line-height: 8*$gap;
+        padding: 0 2*$gap;
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @include transition(background);
+
+        &:focus,
+        &:hover {
+            background: $color__blue--light;
+            text-decoration: none !important;
+        }
+
+        &:active,
+        &--active {
+            font-weight: 800;
+        }
+    }
+
+    &:focus,
+    &:hover {
+        border-color: $color__blue;
+    }
+
+    &--spread {
+        display: block;
+        width: 100%;
+    }
+
+    &--loading {
+        .menu__swing {
+            @include swing();
+        }
+
+        &:focus,
+        &:hover {
+            .menu__swing {
+                background: $color__blue;
+
+                &:before,
+                &:after {
+                    background: $color__blue--light;
+                }
+            }
+        }
+    }
+
+    &--hide {
+        display: none;
+    }
+
+    &--center {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &--right {
+        left: auto;
+        right: 0;
+    }
+
+    &--top {
+        top: auto;
+        bottom: 100%;
+    }
+}

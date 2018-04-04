@@ -1,0 +1,19 @@
+@import '../variables/typography';
+
+/**
+ * Generates basic font definitions based on default font family.
+ *
+ * @mixin
+ * @section Font
+ * @param $color Font color
+ * @param $font-size Font size
+ * @param $line-height Line height, default value is 1.5
+ * @param $font-weight Font weight, default value is $font-weight--regular
+ */
+@mixin define-font($color, $font-size, $line-height: 1.5, $font-weight: $font-weight--regular) {
+	color: $color;
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: $line-height;
+}

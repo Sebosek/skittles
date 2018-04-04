@@ -1,0 +1,228 @@
+@import 'variables/colors';
+@import 'variables/common';
+
+@mixin data-indication($size, $border-size) {
+    &[data-indication=online],
+    &[data-indication=away],
+    &[data-indication=busy] {
+        &:after {
+            box-shadow: 0 0 0 $border-size $color__white;
+            height: $size;
+            width: $size;
+        }
+    }
+}
+
+@mixin notification-size($size, $border-size) {
+    .avatar__notification {
+        box-shadow: 0 0 0 $border-size $color__white;
+        height: $size;
+        width: $size;
+
+        .icon {
+            height: $size/2;
+            width: $size/2;
+        }
+    }
+}
+
+/**
+ * Avatar
+ *
+ * @atom Avatar
+ * @section Avatar
+ * @markup
+ *  <div>
+ *  <figure class="avatar avatar--extra-large">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  <figure class="avatar avatar--large">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  <figure class="avatar">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  <figure class="avatar avatar--small">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  <figure class="avatar avatar--extra-small">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  </div>
+ *
+ *  <div>
+ *  <figure class="avatar avatar--extra-large" data-initials="SB">
+ *  </figure>
+ *  <figure class="avatar avatar--large" data-initials="HP">
+ *  </figure>
+ *  <figure class="avatar" data-initials="HG">
+ *  </figure>
+ *  <figure class="avatar avatar--small" data-initials="RW">
+ *  </figure>
+ *  <figure class="avatar avatar--extra-small" data-initials="NL">
+ *  </figure>
+ *  </div>
+ *
+ *  <div>
+ *  <figure class="avatar avatar--extra-large" data-indication="online">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  <figure class="avatar avatar--large" data-indication="away">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  <figure class="avatar" data-indication="busy">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  <figure class="avatar avatar--small" data-indication="away">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  <figure class="avatar avatar--extra-small" data-indication="online">
+ *   <img src="/assets/fry.jpg">
+ *  </figure>
+ *  </div>
+ * @modifiers
+ *  .avatar--extra-large a extra large avatar
+ *  .avatar--large a large avatar
+ *  .avatar--small a small avatar
+ *  .avatar--extra-small a extra spart avatar
+ *  .avatar--online a avatar with online indicitar, also possible to use data-indication=online
+ *  .avatar--away a avatar with away indicitar, also possible to use data-indication=away
+ *  .avatar--busy a avatar with busy indicitar, also possible to use data-indication=busy
+ */
+.avatar {
+    $base-size: 32px;
+
+    background: $color__blue;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: $base-size;
+    position: relative;
+    vertical-align: middle;
+    width: $base-size;
+
+    img {
+        border-radius: 50%;
+        height: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    &__notification {
+        align-items: center;
+        background: $color__purple;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        font-size: 0;
+        height: $base-size/4;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: $base-size/4;
+        box-shadow: 0 0 0 2px $color__white;
+        --color-icon: $color__white;
+
+        .icon {
+            height: 4px;
+            width: 4px;
+        }
+    }
+
+    &[data-initials] {
+        &:before {
+            content: attr(data-initials);
+            color: $color__white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &[data-indication=online],
+    &[data-indication=away],
+    &[data-indication=busy],
+    &--online,
+    &--busy,
+    &--away {
+        &:after {
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px $color__white;
+            content: '';
+            display: block;
+            height: $base-size/4;
+            width: $base-size/4;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &[data-indication=busy],
+    &--busy {
+        &:after {
+            background: $color__red;
+        }
+    }
+
+    &[data-indication=online],
+    &--online {
+        &:after {
+            background: $color__green;
+        }
+    }
+
+    &[data-indication=away],
+    &--away {
+        &:after {
+            background: $color__yellow;
+        }
+    }
+
+    &--extra-large {
+        $base-size: 64px;
+
+        font-size: 3rem;
+        height: $base-size;
+        width: $base-size;
+
+        @include data-indication($base-size/4, 4px);
+        @include notification-size($base-size/4, 4px);
+    }
+
+    &--large {
+        $base-size: 48px;
+
+        font-size: 2rem;
+        height: $base-size;
+        width: $base-size;
+
+        @include data-indication($base-size/4, 3px);
+        @include notification-size($base-size/4, 3px);
+    }
+
+    &--small {
+        $base-size: 24px;
+
+        font-size: 1rem;
+        height: $base-size;
+        width: $base-size;
+
+        @include data-indication($base-size/4, 2px);
+        @include notification-size($base-size/4, 2px);
+    }
+
+    &--extra-small {
+        $base-size: 16px;
+
+        font-size: .8rem;
+        height: $base-size;
+        width: $base-size;
+
+        @include data-indication($base-size/4, 2px);
+        @include notification-size($base-size/4, 2px);
+    }
+}

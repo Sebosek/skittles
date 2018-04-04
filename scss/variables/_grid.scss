@@ -1,0 +1,17 @@
+@import 'common';
+
+/**
+ * Grid coloumns count
+ *
+ * @nuclide
+ * @section Grid
+ */
+$grid-columns: 12;
+
+/**
+ * Gap between grid columns
+ *
+ * @nuclide
+ * @section Grid
+ */
+$grid-columns__gap: 3*$gap;

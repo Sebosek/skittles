@@ -1,0 +1,17 @@
+@import 'variables/navbar';
+@import 'variables/grid';
+
+/**
+ * Page content structure
+ *
+ * @markup
+ *  <section class="content">
+ *    <!-- content goes here -->
+ *  </section>
+ */
+.content {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: $grid-columns__gap;
+}

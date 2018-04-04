@@ -1,0 +1,23 @@
+.button-group {
+    display: inline-flex;
+
+    > button, 
+    > .button {
+        border-radius: 0;
+
+        &:first-child {
+            border-top-left-radius: 4*$gap;
+            border-bottom-left-radius: 4*$gap;
+        }
+
+        &:last-child {
+            border-top-right-radius: 4*$gap;
+            border-bottom-right-radius: 4*$gap;
+
+            &:not(.button--primary),
+            &:not(.button--danger) {
+                border-left: none;
+            }
+        }
+    }
+}

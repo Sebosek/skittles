@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="https://unpkg.com/jam-icons@1.0.72/css/jam-icons.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Skittles</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <svg class="icon icon--blackish"><use xlink:href="#apps" /></svg>
+    </header>
+    <section class="content">
+        <section class="layout">
+            <div class="layout-header">
+                <h1>Users</h1>
+                <div class="layout-header__controls">
+                    <a class="button button--icon button--link">
+                        <div class="button__icon">
+                            <svg class="icon icon--blackish"><use xlink:href="#plus" /></svg>
+                        </div>
+                        <div class="button__content">Button</div>
+                    </a>
+                </div>
+            </div>
+            <div class="layout__body">
+                <section>
+                    <h1>Radio</h1>
+                    <label class="radio">
+                        <input type="radio" name="radio" checked />
+                        <div class="radio__control"></div>
+                        <div class="radio__label">Radio</div>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio" />
+                        <div class="radio__control"></div>
+                        <div class="radio__label">Radio</div>
+                    </label>
+                </section>
+
+                <section>
+                    <h1>Checkbox</h1>
+                    <label class="checkbox">
+                        <input type="checkbox"/>
+                        <div class="checkbox__control">
+                            <svg class="icon">
+                                <use xlink:href="#check" />
+                            </svg>
+                        </div>
+                        <div class="checkbox__label">Checkbox</div>
+                    </label>
+                </section>
+
+                <section>
+                    <button class="button tooltip" data-tooltip="Tooltip on the top" type="button">Default</button>
+                    <button class="button tooltip tooltip--right" data-tooltip="Tooltip on the right" type="button">Right</button>
+                    <button class="button tooltip tooltip--bottom" data-tooltip="Tooltip on the bottom" type="button">Bottom</button>
+                    <button class="button tooltip tooltip--left" data-tooltip="Tooltip on the left" type="button">Left</button>
+                </section>
+
+                <section>
+                    <h1>Chip</h1>
+                    <div class="chip">
+                        <span>Hermiona Grenger</span>
+                    </div>
+                    <div class="chip chip--blue">
+                        <span>Hermiona Grenger</span>
+                    </div>
+                    <div class="chip chip--green">
+                        <span>Hermiona Grenger</span>
+                    </div>
+                    <div class="chip chip--red">
+                        <span>Hermiona Grenger</span>
+                    </div>
+                    <div class="chip chip--yellow">
+                        <span>Hermiona Grenger</span>
+                    </div>
+                    <div class="chip chip--purple">
+                        <span>Hermiona Grenger</span>
+                    </div>
+                    <div class="chip">
+                        <span>Hermiona Grenger</span>
+                        <div class="chip__close">
+                            <svg class="icon">
+                                <use xlink:href="#close" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="chip">
+                        <span>Too long chip text should be ended with elypsys and do not continue to infinity and more</span>
+                        <div class="chip__close">
+                            <svg class="icon">
+                                <use xlink:href="#close" />
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>Menu</h1>
+                    <div style="position: relative; margin-bottom: 200px; transform: translateX(0);">
+                        <ul class="menu">
+                            <li>
+                                <a class="menu__item" href="#">First item</a>
+                            </li>
+                            <li>
+                                <a class="menu__item" href="#">Second item</a>
+                            </li>
+                            <li>
+                                <div class="splitter splitter--left" data-splitter="Splitter"></div>
+                            </li>
+                            <li>
+                                <a class="menu__item" href="#">Last item</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>Spinner</h1>
+                    <div class="spinner"></div>
+                    <div class="spinner spinner--small"></div>
+                </section>
+
+                <section>
+                    <h1>Input</h1>
+                    <label class="input">
+                        <div class="input__label">Label</div>
+                        <div class="input__envelope">
+                            <input class="input__control" type="text">
+                            <div class="input__icon">
+                                <svg class="icon icon--blackish"><use xlink:href="#close" /></svg>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="input input--error">
+                        <div class="input__label">Error label</div>
+                        <div class="input__envelope">
+                            <input class="input__control" type="text">
+                            <span class="input__icon">
+                                <svg class="icon icon--blackish"><use xlink:href="#close" /></svg>
+                            </span>
+                        </div>
+                    </label>
+
+                    <label class="input">
+                        <div class="input__label">Label with messages</div>
+                        <div class="input__envelope">
+                            <input class="input__control" type="text">
+                            <span class="input__icon">
+                                <svg class="icon icon--blackish"><use xlink:href="#close" /></svg>
+                            </span>
+                        </div>
+                        <div class="input__messages">
+                            <div class="input__message">
+                                <span class="input__icon"><svg class="icon icon--blackish"><use xlink:href="#info" /></svg></span> I am a info message
+                            </div>
+                            <div class="input__message input__message--success">
+                                <span class="input__icon"><svg class="icon icon--blackish"><use xlink:href="#info" /></svg></span>Hello I am a success message</div>
+                            <div class="input__message input__message--error">
+                                <span class="input__icon"><svg class="icon icon--blackish"><use xlink:href="#info" /></svg></span>Hello I am a error message
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="input">
+                        <div class="input__label">Input with icons</div>
+                        <div class="input__envelope">
+                            <span class="input__icon">
+                                <svg class="icon icon--blackish"><use xlink:href="#ghost" /></svg>
+                            </span>
+                            <span class="input__icon">
+                                <svg class="icon icon--blackish"><use xlink:href="#gamepad" /></svg>
+                            </span>
+                            <span class="input__icon">
+                                <svg class="icon icon--blackish"><use xlink:href="#heart" /></svg>
+                            </span>
+                            <input class="input__control" type="text">
+                            <span class="input__icon">
+                                <svg class="icon icon--blackish"><use xlink:href="#close" /></svg>
+                            </span>
+                        </div>
+                    </label>
+                    <label class="input">
+                        <div class="input__label">Input with swing</div>
+                        <div class="input__envelope">
+                            <input class="input__control" type="text">
+                            <span class="input__icon">
+                                <svg class="icon icon--blackish"><use xlink:href="#close" /></svg>
+                            </span>
+                            <div class="input__swing"></div>
+                        </div>
+                    </label>
+                </section>
+
+                <section>
+                    <h1>Avatars</h1>
+                    <h2>Avatar with initials</h2>
+                    <p>Avatar component with initials based on value of <code>data-initials</code> data attribute.</p>
+                    <figure class="avatar avatar--extra-large" data-initials="SB"></figure>
+                    <figure class="avatar avatar--large" data-initials="HP"></figure>
+                    <figure class="avatar" data-initials="HG"></figure>
+                    <figure class="avatar avatar--small" data-initials="RW"></figure>
+                    <figure class="avatar avatar--extra-small" data-initials="NL"></figure>
+
+                    <h2>Avatar with status indication</h2>
+                    <p>
+                        Avatar component with filled image and status indication. Status indication is defined in value of <code>data-indication</code> data attribute.<br>
+                        Available values are: <code>online</code>, <code>away</code>, <code>busy</code>.
+                    </p>
+                    <figure class="avatar avatar--extra-large" data-indication="online">
+                        <img src="/assets/fry.jpg">
+                        <div class="avatar__notification">
+                            <svg class="icon"><use xlink:href="#close" /></svg>
+                        </div>
+                    </figure>
+                    <figure class="avatar avatar--large" data-indication="away">
+                        <img src="/assets/fry.jpg">
+                        <div class="avatar__notification">
+                            <svg class="icon"><use xlink:href="#close" /></svg>
+                        </div>
+                    </figure>
+                    <figure class="avatar" data-indication="busy">
+                        <img src="/assets/fry.jpg">
+                        <div class="avatar__notification"></div>
+                    </figure>
+                    <figure class="avatar avatar--small" data-indication="away">
+                        <img src="/assets/fry.jpg">
+                        <div class="avatar__notification"></div>
+                    </figure>
+                    <figure class="avatar avatar--extra-small" data-indication="online">
+                        <img src="/assets/fry.jpg">
+                        <div class="avatar__notification"></div>
+                    </figure>
+                </section>
+
+                <section>
+                    <h1>Buttons</h1>
+                    <p>Button component in several variants.</p>
+                    <h2>Default button</h2>
+
+                    <a class="button">Button</a>
+                    <a class="button button--icon">
+                        <div class="button__icon">
+                            <svg class="icon icon--blackish"><use xlink:href="#check" /></svg>
+                        </div>
+                        <span>With icon</span>
+                    </a>
+                    <a class="button button--link">Link</a>
+                    <a class="button button--link button--icon">
+                        <div class="button__icon">
+                            <svg class="icon icon--blackish"><use xlink:href="#check" /></svg>
+                        </div>
+                        <div class="button__content">Link with icon</div>
+                    </a>
+                    <a class="button">
+                        <span>Too long label in button should ends with an ellipsis</span>
+                    </a>
+
+                    <h2>Primary</h2>
+                    <a class="button button--primary">Primary</a>
+                    <a class="button">
+                        <div class="button__icon">
+                            <svg class="icon"><use xlink:href="#plus" /></svg>
+                        </div>
+                        <div class="button__content">Button</div>
+                    </a>
+                    <a class="button button--danger">Danger</a>
+                    <a class="button button--link button--primary">Link primary</a>
+                    <a class="button button--link button--danger">Link danger</a>
+                </section>
+                
+                <section>
+                    <h1>Button group</h1>
+                    <div class="button-group">
+                        <a class="button">Dropdown</a>
+                        <a class="button button--squeez">
+                            <svg class="icon icon--blackish"><use xlink:href="#angle-down" /></svg>
+                        </a>
+                    </div>
+                    <div class="button-group">
+                        <a class="button button--primary">Dropdown</a>
+                        <a class="button button--primary button--squeez">
+                            <svg class="icon"><use xlink:href="#angle-down" /></svg>
+                        </a>
+                    </div>
+                    <div class="button-group">
+                        <a class="button button--danger">Dropdown</a>
+                        <a class="button button--danger button--squeez">
+                            <svg class="icon"><use xlink:href="#angle-down" /></svg>
+                        </a>
+                    </div>
+                    <div class="button-group">
+                        <a class="button">Tri</a>
+                        <a class="button button--primary">Color</a>
+                        <a class="button button--danger">Button</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </section>
+</body>
+</html>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol id="angle-down" viewBox="0 0 62 35">
+        <path d="M60.7 1.6c-1.2-1.2-3.1-1.2-4.2 0L31 27 5.5 1.6C4.3.4 2.4.4 1.3 1.6.1 2.8.1 4.7 1.3 5.8l27.6 27.6c1.2 1.2 3.1 1.2 4.2 0L60.7 5.8c1.2-1.1 1.2-3 0-4.2z"/>
+    </symbol>
+
+    <symbol id="apps" baseProfile="tiny" viewBox="0 0 24 24">
+        <circle cx="5" cy="19" r="2.5"/>
+        <circle cx="5" cy="12" r="2.5"/>
+        <circle cx="5" cy="5" r="2.5"/>
+        <circle cx="12" cy="19" r="2.5"/>
+        <circle cx="12" cy="12" r="2.5"/>
+        <circle cx="12" cy="5" r="2.5"/>
+        <circle cx="19" cy="19" r="2.5"/>
+        <circle cx="19" cy="12" r="2.5"/>
+        <circle cx="19" cy="5" r="2.5"/>
+    </symbol>
+
+    <symbol id="info" viewBox="0 0 64 64">
+        <path d="M32 0C14.3 0 0 14.3 0 32s14.3 32 32 32 32-14.3 32-32S49.7 0 32 0zm0 60C16.5 60 4 47.5 4 32S16.5 4 32 4s28 12.5 28 28-12.5 28-28 28zm2.1-16.5c-.7.8-1.3 1.2-1.7 1.2-.2 0-.3 0-.5-.1s-.2-.3-.2-.6.1-1.1.4-2.2c.1-.4.3-1.2.6-2.3l3.6-13.1-2 .4c-.7.1-1.9.3-3.5.5-1.7.2-2.9.3-3.8.4v1.2c1 0 1.7.1 2.1.3s.6.5.6 1.1v.3c0 .1 0 .2-.1.4l-2.8 10.4c-.2.8-.4 1.4-.5 1.8-.2.8-.3 1.4-.3 1.8 0 1.1.3 1.9 1 2.4s1.4.8 2.3.8c1.5 0 2.9-.6 4.2-1.9.8-.8 1.9-2.3 3.4-4.5l-1-.7c-.5.8-1.2 1.6-1.8 2.4zm.8-27.5c-.9 0-1.6.3-2.2.9s-.9 1.3-.9 2.2c0 .9.3 1.6.9 2.2s1.3.9 2.2.9c.9 0 1.6-.3 2.2-.9s.9-1.3.9-2.2c0-.9-.3-1.6-.9-2.2s-1.3-.9-2.2-.9z"/>
+    </symbol>
+
+    <symbol id="heart" viewBox="0 0 62 57">
+        <path d="M56.2 5.3c-7-7-18.3-7.1-25.3-.2l-.2.2-.2-.2c-6.8-6.9-18.1-6.8-25.2.2-7 7-7.1 18.3-.2 25.3l25.7 25.7 25.7-25.7c6.9-6.9 6.8-18.2-.3-25.3zm-3.6 23.4L30.8 50.6 8.9 28.7C3 22.8 2.7 13.6 8.2 8.2c5.4-5.5 14.6-5.2 20.5.7l2.1 2.1 2.1-2.1c5.8-5.9 15-6.2 20.5-.7 5.5 5.4 5.1 14.6-.8 20.5z"/>
+    </symbol>
+
+    <symbol id="gamepad" viewBox="0 0 64 48">
+        <path d="M48 0c-2.8 0-5.5.7-7.8 2H23.8C21.5.7 18.9 0 16 0 7.2 0 0 7.1 0 15.9 0 24.8 3.7 48 12.6 48c4.7 0 9.9-6.5 13.7-14h11.5c3.8 7.5 9 14 13.7 14C60.3 48 64 24.8 64 15.9 64 7.1 56.8 0 48 0zm3.4 44c-2.2 0-6.4-4.6-10.1-11.8L40.2 30H23.8l-1.1 2.2C19 39.4 14.8 44 12.6 44c-1.5 0-3.9-3.5-5.8-9.9C5.1 28.3 4 20.7 4 15.9 4 9.4 9.4 4 16 4c2.1 0 4.1.5 5.8 1.5l.9.5h18.5l.9-.5C43.9 4.5 45.9 4 48 4c6.6 0 12 5.4 12 11.9 0 4.8-1.1 12.3-2.8 18.2-1.9 6.4-4.3 9.9-5.8 9.9z"/>
+        <circle cx="49" cy="13" r="2"/>
+        <circle cx="49" cy="23" r="2"/>
+        <circle cx="44" cy="18" r="2"/>
+        <circle cx="54" cy="18" r="2"/>
+        <path d="M22 16h-4v-4c0-1.1-.9-2-2-2s-2 .9-2 2v4h-4c-1.1 0-2 .9-2 2s.9 2 2 2h4v4c0 1.1.9 2 2 2s2-.9 2-2v-4h4c1.1 0 2-.9 2-2s-.9-2-2-2z"/>
+    </symbol>
+
+    <symbol id="ghost" viewBox="0 0 48 64">
+        <circle cx="34" cy="22" r="6"/>
+        <circle cx="14" cy="22" r="6"/>
+        <path d="M24 0C10.7 0 0 10.7 0 24v40l8.1-8 8 8 5.1-5.2L24 56l2.8 2.8L32 64l5.2-5.2L40 56l2.8 2.8L48 64V24C48 10.7 37.3 0 24 0zm20 54.3l-3.9-3.9-8.1 8-8-8-8 8-7.9-8-4.1 4V24C4 13 13 4 24 4s20 9 20 20v30.3z"/>
+    </symbol>
+
+    <symbol id="close" viewBox="0 0 62 62">
+        <title>Close</title>
+        <path d="M61.1 56.9L35.3 31.1 60.8 5.6c1.2-1.2 1.2-3.1 0-4.2-1.2-1.2-3.1-1.2-4.2 0L31.1 26.8 5.9 1.7C4.7.5 2.8.5 1.7 1.7.5 2.9.5 4.8 1.7 5.9L26.8 31 1.4 56.5c-1.2 1.2-1.2 3.1 0 4.2 1.2 1.2 3.1 1.2 4.2 0l25.5-25.5L56.9 61c1.2 1.2 3.1 1.2 4.2 0 1.2-1.1 1.2-3 0-4.1z"/>
+    </symbol>
+
+    <symbol id="backpack" viewBox="0 0 42 64">
+        <title>Backpack</title>
+        <path d="M40 20V5c0-2.8-2.2-5-5-5s-5 2.2-5 5v5c-2.7-1.3-5.8-2-9-2s-6.3.7-9 2V5c0-2.8-2.2-5-5-5S2 2.2 2 5v15c-1.3 2.7-2 5.8-2 9v31c0 2.2 1.8 4 4 4h34c2.2 0 4-1.8 4-4V29c0-3.2-.7-6.3-2-9zM33 5c0-1.1.9-2 2-2s2 .9 2 2v10.4c-1.2-1.4-2.5-2.6-4-3.6V5zM5 5c0-1.1.9-2 2-2s2 .9 2 2v6.8c-1.5 1-2.8 2.3-4 3.6V5zm34 55c0 .6-.4 1-1 1H4c-.6 0-1-.5-1-1v-2h36v2zm0-5H3V29c0-5.4 2.4-10.3 6.2-13.6l.9-.7.6-.4.9-.6c2.7-1.7 6-2.7 9.4-2.7 3.5 0 6.7 1 9.5 2.7l.9.6.6.5.8.6C36.6 18.7 39 23.5 39 29v26zM21 14c-8.3 0-15 6.7-15 15h3c0-6.6 5.4-12 12-12s12 5.4 12 12h3c0-8.3-6.7-15-15-15zm12 19.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5V31h-3v2.5zM32 37H10c-2.2 0-4 1.8-4 4v7c0 2.2 1.8 4 4 4h22c2.2 0 4-1.8 4-4v-7c0-2.2-1.8-4-4-4zm1 11c0 .6-.4 1-1 1H10c-.6 0-1-.4-1-1v-7c0-.6.4-1 1-1h22c.6 0 1 .4 1 1v7z"/>
+    </symbol>
+
+    <symbol id="attachement" viewBox="0 0 51 56">
+        <title>Attachement</title>
+        <path d="M22.8 48.8c-4.3 4.3-11.3 4.3-15.6 0-4.3-4.3-4.3-11.3 0-15.6L21 19.5 33.7 6.7c2.9-2.9 7.7-2.9 10.6 0 2.9 2.9 2.9 7.7 0 10.6L30.5 31.1l-12 12c-1.6 1.6-4.1 1.6-5.7 0-1.6-1.6-1.6-4.1 0-5.7L33.4 17l-2.8-2.8L10 34.7c-3.1 3.1-3.1 8.2 0 11.3 3.1 3.1 8.2 3.1 11.3 0l12-12 13.8-13.8c4.5-4.5 4.5-11.8 0-16.3s-11.8-4.5-16.3 0L18.2 16.6 4.4 30.4c-5.9 5.9-5.9 15.4 0 21.2 5.9 5.9 15.4 5.9 21.2 0l23.3-23.3-2.8-2.8-23.3 23.3z"/>
+    </symbol>
+
+    <symbol id="anchor" viewBox="0 0 64 64">
+        <title>Anchor</title>
+        <path d="M61 35c-1.7 0-3 1.3-3 3 0 .8.3 1.5.8 2.1C55.5 51 45.8 59.1 34 60V26h7c1.1 0 2-.9 2-2s-.9-2-2-2h-7v-4.2c4-.9 7-4.5 7-8.8 0-5-4-9-9-9s-9 4-9 9c0 4.3 3 7.9 7 8.8V22h-7c-1.1 0-2 .9-2 2s.9 2 2 2h7v33.9C18.2 59.1 8.5 51 5.2 40.1c.5-.6.8-1.3.8-2.1 0-1.7-1.3-3-3-3s-3 1.3-3 3c0 .9.4 1.8 1.1 2.3C4.8 54 17.2 64 32 64s27.2-10 30.9-23.7c.7-.6 1.1-1.4 1.1-2.3 0-1.7-1.3-3-3-3zM27 9c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5-5-2.2-5-5z"/>
+    </symbol>
+
+    <symbol id="backward" viewBox="0 0 64 53">
+        <title>Backward</title>
+        <path d="M61.4 1.2L45.9 11.3l-3.3 2.2-2.7 1.8V2.5c0-1.7-1.1-2.3-2.5-1.4L1.1 24.9c-1.4.9-1.4 2.4 0 3.3L37.4 52c1.4.9 2.5.3 2.5-1.4V38l2.7 1.8 3.3 2.2 15.5 10c1.4.9 2.5.3 2.5-1.4V2.5c0-1.6-1.1-2.3-2.5-1.3zm-3.5 41.3l-24-15.7v15.7l-24.4-16 24.4-16v15.7l24-15.7v32z"/>
+    </symbol>
+
+    <symbol id="check" viewBox="0 0 60 42">
+        <title>Check icon</title>
+        <path d="M59.1 1.5C57.9.3 56 .3 54.9 1.5L21.6 34.7 5.4 18.5c-1.2-1.2-3.1-1.2-4.2 0-1.2 1.2-1.2 3.1 0 4.2l18.4 18.4c.6.6 1.4.9 2.1.9.8 0 1.5-.3 2.1-.9L59.1 5.7c1.2-1.1 1.2-3 0-4.2z"/>
+    </symbol>
+
+    <symbol id="plus" viewBox="0 0 64 64">
+        <title>Plus icon</title>
+        <path d="M61 29H35V3c0-1.7-1.3-3-3-3s-3 1.3-3 3v26H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h26v26c0 1.7 1.3 3 3 3s3-1.3 3-3V35h26c1.7 0 3-1.3 3-3s-1.3-3-3-3z"/>
+    </symbol>
+
+    <symbol id="angle-down" viewBox="0 0 62 35">
+        <title>Angle down</title>
+        <path d="M60.7 1.6c-1.2-1.2-3.1-1.2-4.2 0L31 27 5.5 1.6C4.3.4 2.4.4 1.3 1.6.1 2.8.1 4.7 1.3 5.8l27.6 27.6c1.2 1.2 3.1 1.2 4.2 0L60.7 5.8c1.2-1.1 1.2-3 0-4.2z"/>
+    </symbol>
+</svg>

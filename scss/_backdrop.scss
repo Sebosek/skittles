@@ -1,0 +1,23 @@
+@import 'variables/z-index';
+@import 'variables/colors';
+
+.backdrop {
+    background: rgba($color__blackish, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-index--backdrop;
+    display: none;
+
+    &[data-backdrop-shown=true],
+    &--show {
+        display: block;
+    }
+
+    &--hide,
+    &[data-backdrop-shown=false] {
+        display: none;
+    }
+}

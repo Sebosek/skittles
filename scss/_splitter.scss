@@ -1,0 +1,109 @@
+@import 'variables/common';
+@import 'variables/colors';
+
+.splitter {
+    display: inline-block;
+    margin: 3*$gap 0;
+    position: relative;
+    width: 100%;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        background: $color__gray--dark;
+    }
+
+    &--left,
+    &--center,
+    &--right {
+        &:before {
+            background: $color__white;
+            color: $color__gray--dark;
+            content: attr(data-splitter);
+            font-size: 1.2rem;
+            line-height: 1;
+            padding: 0 $gap;
+            position: absolute;
+            text-transform: uppercase;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+    }
+
+    &--left {
+        &:before {
+            left: 0;
+        }
+    }
+
+    &--center {
+        &:before {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &--right {
+        &:before {
+            right: 0;
+        }
+    }
+}
+
+.vertical-splitter {
+    display: block;
+    margin: 0 3*$gap;
+    position: relative;
+
+    &:after {
+        background: $color__gray--dark;
+        content: '';
+        display: block;
+        left: 50%;
+        height: 100%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 1px;
+    }
+
+    &--top,
+    &--middle,
+    &--bottom {
+        &:before {
+            background: $color__white;
+            color: $color__gray--dark;
+            content: attr(data-splitter);
+            font-size: 1.2rem;
+            padding: $gap 0;
+            position: absolute;
+            text-transform: uppercase;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    }
+
+    &--top {
+        &:before {
+            top: 0;
+        }
+    }
+
+    &--middle {
+        &:before {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &--bottom {
+        &:before {
+            bottom: 0;
+        }
+    }
+}

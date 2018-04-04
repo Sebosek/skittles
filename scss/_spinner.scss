@@ -1,0 +1,74 @@
+@import 'variables/colors';
+@import 'variables/common';
+
+.spinner {
+    $spinner-size: 32px;
+    $color: $color__blue;
+    $border: $gap;
+
+    animation: rotation 2s infinite linear;
+    border-radius: 100%;
+    border: $border solid $color;
+    border-color: transparent $color $color $color;
+    height: $spinner-size;
+    position: relative;
+    width: $spinner-size;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+
+    &:before {
+        $size: 20px;
+        $color: $color__blue;
+        $border: 2px;
+        $offset: 2px;
+        animation: reversed 1s infinite linear;
+        border-radius: 100%;
+        border: $border solid $color;
+        border-color: $color transparent $color $color;
+        left: $offset;
+        top: $offset;
+        height: $size;
+        width: $size;
+    }
+
+    &:after {
+        $size: 12px;
+        $color: $color__blue;
+        $border: 1px;
+        $offset: 6px;
+        animation: rotation 3s infinite linear;
+        border-radius: 100%;
+        border: $border solid $color;
+        border-color: $color $color $color transparent;
+        left: $offset;
+        top: $offset;
+        height: $size;
+        width: $size;
+    }
+
+    &--small {
+        border-width: 2px;
+        height: 14px;
+        width: 14px;
+
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+}
+
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes reversed {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+}

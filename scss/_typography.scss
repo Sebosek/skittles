@@ -1,0 +1,112 @@
+@import 'variables/typography';
+@import 'variables/common';
+@import 'variables/colors';
+@import 'utils/typography';
+
+/**
+ * @markup
+ *  <h1>Header 1</h1>
+ */
+h1, .h1 {
+    @include define-font($color__blackish, 2rem, 1, $font-weight--regular);
+    margin: 3*$gap 0 $gap;
+}
+
+/**
+ * @atom Header 2
+ * @section Headers
+ * @markup
+ *  <iframe src="/nucleus/typography/h2.html">
+ *    <h2>Header 2</h2>
+ *  </iframe>
+ */
+h2, .h2 {
+    @include define-font($color__blackish, 1.6rem, 1, $font-weight--medium);
+    margin: 3*$gap 0 $gap;
+}
+
+/**
+ * @atom Header 3
+ * @section Headers
+ * @markup
+ *  <iframe src="/nucleus/typography/h3.html">
+ *    <h3>Header 1</h3>
+ *  </iframe>
+ */
+h3, .h3 {
+    @include define-font($color__blackish, $font-size, 1, $font-weight--medium);
+    margin: 3*$gap 0 $gap;
+    text-transform: uppercase;
+}
+
+/**
+ * @atom Paregraph
+ * @section Text
+ * @markup
+ *  <iframe src="/nucleus/typography/p.html">
+ *    <p>...</p>
+ *  </iframe>
+ */
+p {
+    @include define-font($color__blackish, $font-size, 1.5, $font-weight--regular);
+
+    margin-bottom: 3*$gap;
+}
+
+/**
+ * @atom Anchor
+ * @section Text
+ * @markup
+ *  <iframe src="/nucleus/typography/a.html">
+ *    <a href="#">Google</a>
+ *  </iframe>
+ */
+a {
+    @include define-font($color__blackish, $font-size, 1.5, $font-weight--regular);
+
+    color: $color__blackish;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        cursor: default;
+    }
+
+    &[href] {
+        color: $color__blue;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+code {
+    background: $color__gray;
+    border-radius: $gap;
+    font-family: 'Ubuntu Mono', monospace;
+    padding: $gap;
+}
+
+/**
+ * @modifiers
+ *  .text--left text on left
+ *  .text--center center text
+ *  .text--right text on right
+ */
+.text {
+    &--left {
+        text-align: left;
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }
+}

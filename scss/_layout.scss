@@ -1,0 +1,30 @@
+@import 'variables/navbar';
+@import 'variables/grid';
+
+/**
+ * Page layout structure
+ *
+ * @markup
+ *  <section class="layout">
+ *  </section>
+ */
+.layout {
+    background: $color__white;
+    border: 1px solid $color__gray;
+    border-radius: $gap;
+    margin-bottom: $grid-columns__gap;
+    overflow: hidden;
+
+    &__body {
+        padding: 5*$gap;
+    }
+}
+
+.layout-header {
+    border-bottom: 1px solid $color__gray;
+    padding: 5*$gap 5*$gap 2*$gap;
+
+    &__controls {
+        margin: 0 -3*$gap;
+    }
+}

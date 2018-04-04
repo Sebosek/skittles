@@ -1,0 +1,17 @@
+@import 'variables/common';
+@import 'variables/colors';
+
+.icon {
+    width: 3*$gap;
+    height: 3*$gap;
+    fill: $color__white;
+    fill: var(--color-icon);
+
+    // &--green {
+    //     fill: $color__green;
+    // }
+
+    // &--blackish {
+    //     fill: $color__blackish;
+    // }
+}
