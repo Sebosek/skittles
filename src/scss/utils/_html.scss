@@ -1,0 +1,32 @@
+@import '../variables/common';
+
+html {
+    box-sizing: border-box;
+    font-size: 10px; // Define rem unit
+}
+
+html,
+body {
+    height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+*[data-control-pop=true] {
+    animation-duration: $duration;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-name: control-pop;
+}
+
+*[data-control-hide=true] {
+    animation-duration: $duration;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-name: hide;
+    animation-fill-mode: forwards;
+}

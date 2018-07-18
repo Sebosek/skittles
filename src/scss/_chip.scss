@@ -1,0 +1,105 @@
+@import 'variables/common';
+@import 'variables/colors';
+@import 'utils/icon';
+@import 'utils/transition';
+
+@mixin chip-colors($background, $color, $hover) {
+    background: $background;
+    color: $color;
+    --color-icon: $color;
+
+    &:hover {
+        background: $hover;
+    }
+}
+
+/**
+ * Chip
+ *
+ * @markup
+ *  <div>
+ *   <div class="chip chip--large">Harry potter</div>
+ *   <div class="chip">Hermiona Grenger</div>
+ *   <div class="chip chip--small">Ron Visel</div>
+ *  </div>
+ *  <div>
+ *   <div class="chip chip--large">Harry potter<div class="chip__close"></div></div>
+ *   <div class="chip">Hermiona Grenger<div class="chip__close"></div></div>
+ *   <div class="chip chip--small">Ron Visel<div class="chip__close"></div></div>
+ *  </div>
+ * @modifiers
+ *  .chip--blue a blue chip
+ *  .chio--green a green chip
+ *  .chio--red a red chip
+ *  .chio--yellow a yellow chip
+ *  .chio--purple a purple chip
+ */
+.chip {
+    $height: 2.2rem;
+
+    align-items: center;
+    display: inline-flex;
+    height: $height;
+    border-radius: 4*$gap;
+    font-size: 1.2rem;
+    margin: $gap/2;
+    max-width: 30rem;
+    user-select: none;
+
+    @include chip-colors($color__gray, $color__blackish, $color__gray--dark);
+    @include transition(background);
+
+    > span {
+        padding: 0 3*$gap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__close {
+        --icon-height: 16px;
+        --icon-width: 16px;
+
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        margin-left: -2*$gap;
+        padding: $gap;
+        height: $height;
+        min-width: $height;
+        width: $height;
+
+        @include transition(background);
+
+        &:hover,
+        &:focus {
+            background: $color__red;
+        }
+
+        .icon {
+            position: absolute;
+        }
+    }
+
+    &--blue {
+        @include chip-colors($color__blue, $color__white, $color__blue--dark);
+    }
+
+    &--green {
+        @include chip-colors($color__green, $color__white, $color__green--dark);
+    }
+
+    &--red {
+        @include chip-colors($color__red, $color__white, $color__red--dark);
+    }
+
+    &--yellow {
+        @include chip-colors($color__yellow, $color__white, $color__yellow--dark);
+    }
+
+    &--purple {
+        @include chip-colors($color__purple, $color__white, $color__purple--dark);
+    }
+}

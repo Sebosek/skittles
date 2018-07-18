@@ -1,0 +1,260 @@
+@import 'variables/typography';
+@import 'variables/common';
+@import 'variables/colors';
+@import 'utils/typography';
+@import 'utils/transition';
+@import 'utils/icon';
+
+
+button,
+.button {
+    $height: 10*$gap;
+
+    align-items: center;
+    //background: $color__green;
+    //border: none;
+    //border-radius: $height/2;
+    //color: $color__white;
+    background: $color__white;
+    border: 1px solid $color__gray;
+    border-radius: $height/2;
+    color: $color__blackish;
+    cursor: pointer !important; // overwrite anchor element
+    display: inline-flex;
+    font-size: 1.4rem;
+    font-weight: $font-weight--medium;
+    height: $height;
+    justify-content: center;
+    max-width: 30rem;
+    padding: 0 2.4rem;
+    position: relative;
+    user-select: none;
+
+    @include transition(box-shadow .5s, background .5s);
+    --color-icon: $color__blackish;
+
+    > * {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__icon {
+        display: none;
+    }
+
+    &:hover {
+        background: $color__gray;
+    }
+
+    &:focus,
+    &:active {
+        box-shadow: 0 0 0 $gap rgba($color__gray, $opacity);
+        outline: none;
+    }
+
+    &--circle {
+        border-radius: 50%;
+        padding: 0;
+        width: 10*$gap;
+
+        &:before {
+            display: block;
+            content: '';
+            width: 100%;
+            padding-top: (1 / 1) * 100%;
+        }
+
+        & > * {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &--icon {
+        padding: 0 3.6rem;
+
+        .button__icon {
+            display: inline-flex;
+            position: absolute;
+    
+            &:first-child {
+                left: 1.2rem;
+            }
+    
+            &:last-child {
+                right: 1.2rem;
+            }
+        }
+    }
+
+    &--squeez {
+        padding: 0 1rem;
+    }
+
+    &[type=submit],
+    &--primary {
+        background: $color__blue;
+        border: none;
+        color: $color__white;
+        --color-icon: $color__white;
+
+        &:hover {
+            background: $color__blue--dark;
+        }
+
+        &:focus,
+        &:active {
+            box-shadow: 0 0 0 $gap rgba($color__blue, $opacity);
+        }
+    }
+
+    &[type=reset],
+    &--danger {
+        background: $color__red;
+        border: none;
+        color: $color__white;
+        --color-icon: $color__white;
+
+        &:hover {
+            background: $color__red--dark;
+        }
+
+        &:focus,
+        &:active {
+            box-shadow: 0 0 0 $gap rgba($color__red, $opacity);
+        }
+    }
+
+    &--green {
+        background: $color__green;
+        border: none;
+        color: $color__white;
+        --color-icon: $color__white;
+
+        &:hover {
+            background: $color__green--dark;
+        }
+
+        &:focus,
+        &:active {
+            box-shadow: 0 0 0 $gap rgba($color__green, $opacity);
+        }
+    }
+
+    &--link {
+        background: transparent;
+        color: $color__blackish;
+        border: none;
+        --color-icon: $color__blackish;
+
+        &:focus,
+        &:active {
+            background: $color__gray;
+            box-shadow: 0 0 0 $gap rgba($color__gray--light, $opacity);
+        }
+
+        &.button--primary {
+            color: $color__blue;
+
+            &:hover {
+                background: $color__blue--light;
+                animation: button-hover-blue 3.6s infinite normal linear;
+            }
+
+            &:focus {
+                background: $color__blue--light;
+                animation: button-hover-blue .2s infinite normal linear;
+            }
+        }
+
+        &.button--danger {
+            color: $color__red;
+
+            &:hover {
+                background: $color__red--light;
+            }
+
+            &:focus {
+                background: $color__red--light;
+                box-shadow: 0 0 0 $gap rgba($color__red--light, $opacity);
+            }
+        }
+
+        &.button--green {
+            color: $color__green;
+
+            &:hover {
+                background: $color__green--light;
+            }
+
+            &:focus {
+                background: $color__green--light;
+                box-shadow: 0 0 0 $gap rgba($color__green--light, $opacity);
+            }
+        }
+
+        &.button--purple {
+            color: $color__purple;
+
+            &:hover {
+                background: $color__purple--light;
+            }
+
+            &:focus {
+                background: $color__purple--light;
+                box-shadow: 0 0 0 $gap rgba($color__purple--light, $opacity);
+            }
+        }
+    }
+
+    &--small {
+        font-size: 1.2rem;
+        height: 7*$gap;
+        line-height: 7*$gap;
+        padding-left: 4*$gap;
+        padding-right: 4*$gap;
+
+        --icon-width: 12px;
+        --icon-height: 12px;
+
+        &.button--circle {
+            padding: 0;
+            width: 7*$gap;
+        }
+    }
+
+    &--big {
+        font-size: 1.8rem;
+        height: 13*$gap;
+        line-height: 13*$gap;
+        padding-left: 8*$gap;
+        padding-right: 8*$gap;
+
+        --icon-width: 32px;
+        --icon-height: 32px;
+
+        &.button--circle {
+            padding: 0;
+            width: 13*$gap;
+        }
+    }
+
+    &[disabled],
+    &--disabled {
+        background: $color__gray;
+        color: $color__gray--dark;
+        cursor: not-allowed;
+
+        &:focus,
+        &:active {
+            box-shadow: none;
+        }
+    }
+}

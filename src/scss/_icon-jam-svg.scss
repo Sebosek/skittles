@@ -1,0 +1,11 @@
+@import 'variables/common';
+@import 'variables/colors';
+
+.icon {
+    height: 6*$gap;
+    height: var(--icon-height);
+    width: 6*$gap;
+    width: var(--icon-width);
+    fill: $color__white;
+    fill: var(--color-icon);
+}

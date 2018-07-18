@@ -1,0 +1,27 @@
+@import 'variables/common';
+@import 'variables/colors';
+
+.captcha {
+    align-items: center;
+    background: $color__purple--light;
+    border: 1px solid $color__purple;
+    border-radius: $gap;
+    display: flex;
+    margin-bottom: 3*$gap;
+    padding: 2*$gap;
+    justify-content: center;
+
+    &--gray {
+        background: transparent;
+        border: 1px solid $color__gray;
+    }
+
+    &--blue {
+        background: $color__blue--light;
+        border: 1px solid $color__blue;
+    }
+
+    &__code {
+        margin-right: 5*$gap;
+    }
+}

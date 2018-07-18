@@ -1,0 +1,34 @@
+@import 'variables/common';
+
+.tile {
+    align-items: stretch;
+    display: flex;
+    margin-bottom: 4*$gap;
+
+    &__prepend,
+    &__append,
+    &__content {
+        margin-right: 4*$gap;
+
+        &--vertical-center {
+            align-items: center;
+            display: inline-flex;
+        }
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &--compact {
+        .tile__prepend,
+        .tile__append,
+        .tile__content {
+            margin-right: 2*$gap;
+        }
+    }
+
+    & > *:last-child {
+        margin-right: 0;
+    }
+}

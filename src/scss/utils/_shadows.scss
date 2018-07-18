@@ -1,0 +1,11 @@
+@mixin shadow--small($color: rgba(12, 12, 13, 0.1)) {
+    box-shadow: 0 1px 4px $color;
+}
+
+@mixin shadow--medium($color: rgba(12, 12, 13, 0.1)) {
+    box-shadow: 0 2px 8px $color;
+}
+
+@mixin shadow--large($color: rgba(12, 12, 13, 0.1)) {
+    box-shadow: 0 4px 16px $color;
+}

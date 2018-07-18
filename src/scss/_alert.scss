@@ -1,0 +1,54 @@
+@import 'variables/colors';
+@import 'variables/common';
+@import 'utils/shadows';
+
+.alerts {
+    position: fixed;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 360px;
+    z-index: 100;
+
+    .alert {
+        animation-duration: 2*$duration;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-name: hide;
+        animation-fill-mode: forwards;
+        animation-delay: 5s;
+
+        @include shadow--large();
+    }
+}
+
+.alert {
+    background: $color__gray--light;
+    border: 1px solid $color__gray;
+    border-top: 4px solid $color__gray;
+    border-radius: $gap;
+    display: flex;
+    padding: 3*$gap 5*$gap;
+    margin-bottom: 3*$gap;
+
+    &--danger {
+        background: $color__red--light;
+        border-color: $color__red;
+    }
+
+    &--warning {
+        background: $color__yellow--light;
+        border-color: $color__yellow;
+    }
+
+    &--success {
+        background: $color__green--light;
+        border-color: $color__green;
+    }
+
+    &--info {
+        background: $color__blue--light;
+        border-color: $color__blue;
+    }
+}

@@ -1,0 +1,61 @@
+@import '../variables/common';
+@import '../variables/swing';
+@import 'internal/animations';
+
+@keyframes swing-move {
+    0% { left: 0; }
+    100% { left: 100%; }
+}
+
+@keyframes swing-helper-move {
+    0% { left: -$swing__width; }
+    80% { left: -$swing__width; }
+    100% { left: 0; }
+}
+
+@keyframes control-ripple {
+    0% { @include __control-ripple-start(); }
+    90% { @include __control-ripple-almost-done(); }
+    100% { @include __control-ripple-done(); }
+}
+
+@keyframes control-scale {
+    0% { transform: scale(0, 0); }
+    50% { transform: scale(1.4, 1.4); }
+    100% { transform: scale(1, 1); }
+}
+
+@keyframes control-pop {
+    0% { transform: scale(1, 1); }
+    50% { transform: scale(1.4, 1.4); }
+    100% { transform: scale(1, 1); }
+}
+
+@keyframes hide {
+    0% { 
+        transform: scale(1, 1) translateY(0);
+        opacity: 1;
+        display: block;
+    }
+    100% { 
+        transform: scale(.7, .7) translateY(-20px);
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes button-hover-blue {
+    0% { box-shadow: 0 0 0 $gap rgba($color__blue--light, $opacity); }
+    50% { box-shadow: 0 0 0 $gap rgba($color__blue, $opacity); }
+    100% { box-shadow: 0 0 0 $gap rgba($color__blue--light, $opacity); }
+}
+
+@mixin checkbox-ripple() {
+    animation-name: control-ripple;
+    @extend %__control-ripple;
+}
+
+@mixin radio-ripple() {
+    animation-name: control-ripple;
+    @extend %__control-ripple;
+}
