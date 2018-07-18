@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace skittles.Pages
+using Skittles.Services;
+
+namespace Skittles.Pages
 {
     public class IndexModel : PageModel
     {
+        private readonly DocService _service;
+
+        public string Content { get; private set; }
+
+        public IndexModel(DocService service)
+        {
+            _service = service;
+        }
+
         public void OnGet()
         {
-
+            Content = _service.Index();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Reflection;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace skittles
+namespace Skittles
 {
     public class Program
     {
