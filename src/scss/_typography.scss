@@ -96,6 +96,12 @@ code {
     padding: $gap;
 }
 
+pre code {
+    padding: 3*$gap;
+    width: 100%;
+    display: block;
+}
+
 /**
  * @modifiers
  *  .text--left text on left

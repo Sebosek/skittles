@@ -27,9 +27,10 @@ namespace Skittles
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-
-            services.AddSingleton<DocService>().AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            
+            services.AddSingleton<DocService>().AddMvc()
+                .AddRazorPagesOptions(options => options.Conventions.AddPageRoute("/Index", "{*url}"))
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -15,7 +15,7 @@ namespace Skittles.Pages
             _service = service;
         }
 
-        public void OnGet()
+        public void OnGet(string url)
         {
             Content = _service.Index();
         }

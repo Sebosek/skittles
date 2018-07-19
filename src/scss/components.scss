@@ -63,7 +63,7 @@
 
     &-navigation {
         ul ul {
-            border-bottom: 1px solid $color__gray;
+            //border-bottom: 1px solid $color__gray;
             padding-left: 24px;
             background: $color__gray--light;
             display: none;
@@ -71,10 +71,10 @@
 
         a {
             color: $color__blackish--light;
-            border-bottom: 1px solid $color__gray;
+            //border-bottom: 1px solid $color__gray;
             display: block;
             font-size: 1.6rem;
-            padding: 12px 24px;
+            padding: 16px 24px;
 
             &:hover {
                 color: $color__blackish;
@@ -123,7 +123,7 @@
     }
 
     &-article {
-        padding-top: 14rem;
+        padding-top: 4rem;
         min-width: 700px;
         max-width: 980px;
 
@@ -137,41 +137,63 @@
         }
     }
 
-    &-color {
+    &-palette {
         $border-radius: 8px;
+
+        border-radius: $border-radius;
+        display: flex;
+        height: 200px;
+        flex-direction: column;
+        margin-bottom: 32px;
+        text-align: center;
+
+        &__main,
+        &__minor {
+            display: flex;
+            flex-direction: inherit;
+            justify-content: center;
+        }
+
+        &__main {
+            flex-grow: 2;
+        }
+
+        &__minor {
+            flex-grow: 1;
+        }
+
+        &__hey,
+        &__name {
+            text-transform: uppercase;
+        }
+
+        &__name {
+            font-size: 2rem;
+        }
+
+        &__hex {
+            font-size: 1.4rem;
+        }
+
+        & > *:last-child {
+            border-radius: 0 0 $border-radius $border-radius;
+        }
 
         @mixin color-shapes($name, $base, $light, $dark) {
             &--#{$name} {
                 background: $base;
+                color: $light;
     
-                .skittles-components-color__light {
+                .skittles-components-palette--light {
                     background: $light;
+                    color: $dark;
                 }
     
-                .skittles-components-color__dark {
+                .skittles-components-palette--dark {
                     background: $dark;
+                    color: $light;
                 }
             }
-        }
-
-        align-items: center;
-        border-radius: $border-radius;
-        display: flex;
-        flex-direction: column;
-        height: 180px;
-        justify-content: space-between;
-        margin-bottom: 32px;
-
-        > * {
-            width: 100%;
-        }
-
-        .skittles-components-color__light {
-            border-radius: $border-radius $border-radius 0 0;
-        }
-
-        .skittles-components-color__dark {
-            border-radius: 0 0 $border-radius $border-radius;
         }
 
         @include color-shapes('green', $color__green, $color__green--light, $color__green--dark);
@@ -179,27 +201,6 @@
         @include color-shapes('red', $color__red, $color__red--light, $color__red--dark);
         @include color-shapes('purple', $color__purple, $color__purple--light, $color__purple--dark);
         @include color-shapes('yellow', $color__yellow, $color__yellow--light, $color__yellow--dark);
-    }
-
-    &-color-definition {
-        display: flex;
-        flex-direction: column;
-        font-size: 1.8rem;
-        height: 60px;
-        text-align: center;
-        width: 100%;
-
-        > span {
-            margin-top: 8px;
-        }
-
-        > code {
-            background: transparent;
-            color: $color__blackish--light;
-            font-size: 1.2rem;
-            font-family: 'Ubuntu Mono', monospace;
-            padding: 0;
-        }
     }
 }
 
