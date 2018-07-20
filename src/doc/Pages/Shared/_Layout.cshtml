@@ -33,7 +33,7 @@
             </div>
             <nav class="skittles-components-navigation">
                 <ul>
-                    <li><a class="skittles-components-navigation__topic" asp-page="./index">Introduction</a></li>
+                    <li><a class="skittles-components-navigation__topic" href="/">Introduction</a></li>
                     <li id="philosophy">
                         <a class="skittles-components-navigation__topic" href="#philosophy">
                             <span>Philosophy</span>
@@ -42,12 +42,12 @@
                             </span>
                         </a>
                         <ul>
-                            <li><a asp-page="./index" asp-route-url="colors">Colors</a></li>
-                            <li><a asp-page="./index" asp-route-url="code-guidelines">Code guidelines</a></li>
-                            <li><a asp-page="./index" asp-route-url="typography">Typography</a></li>
-                            <li><a asp-page="./index" asp-route-url="animations">Animations</a></li>
-                            <li><a asp-page="./index" asp-route-url="border-radius">Border radius</a></li>
-                            <li><a asp-page="./index" asp-route-url="shadows">Shadows</a></li>
+                            <li><a asp-page="./index" asp-route-url="colors" asp-fragment="philosophy">Colors</a></li>
+                            <li><a asp-page="./index" asp-route-url="code-guidelines" asp-fragment="philosophy">Code guidelines</a></li>
+                            <li><a asp-page="./index" asp-route-url="typography" asp-fragment="philosophy">Typography</a></li>
+                            <li><a asp-page="./index" asp-route-url="animations" asp-fragment="philosophy">Animations</a></li>
+                            <li><a asp-page="./index" asp-route-url="border-radius" asp-fragment="philosophy">Border radius</a></li>
+                            <li><a asp-page="./index" asp-route-url="shadows" asp-fragment="philosophy">Shadows</a></li>
                         </ul>
                     </li>
                     <li id="components">
@@ -61,7 +61,7 @@
                             @{
                                 foreach (var menu in MenuService.Components())
                                 {
-                                    <li><a href="components/@menu.UrlPath">@menu.Label</a></li>
+                                    <li><a href="components/@menu.UrlPath#components">@menu.Label</a></li>
                                 }
                             }
                         </ul>

@@ -1,10 +1,15 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
 
 namespace Skittles.Extensions
 {
     public static class StringExtensions
     {
-        public static string SanityFilename(this string file) => file.Replace(" ", "-").ToLowerInvariant();
+        public static string SanityFilename(this string file) =>
+            file.Replace(Path.DirectorySeparatorChar.ToString(), "/")
+                .Replace("  ", " ")
+                .Replace(" ", "-")
+                .ToLowerInvariant();
 
         public static string JustFilename(this string file) => string.Join(" ", file.Split('.').Reverse().Skip(1).Reverse());
 

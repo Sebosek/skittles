@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using Skittles.Services;
 
@@ -6,18 +7,27 @@ namespace Skittles.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly DocService _service;
+        private readonly FilesService _filesService;
 
         public string Content { get; private set; }
 
-        public IndexModel(DocService service)
+        public IndexModel(FilesService filesService)
         {
-            _service = service;
+            _filesService = filesService;
         }
 
-        public void OnGet(string url)
+        public IActionResult OnGet(string url)
         {
-            Content = _service.Index();
+            var result = _filesService.Read(string.IsNullOrEmpty(url) ? "introduction" : url);
+            if (result == null)
+            {
+                return Redirect("NotFound");
+            }
+
+            Content = result.Content;
+            ViewData["Title"] = result.Title;
+
+            return Page();
         }
     }
 }

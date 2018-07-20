@@ -28,7 +28,9 @@ namespace Skittles
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             
-            services.AddSingleton<DocService>().AddMvc()
+            services
+                .AddSingleton<FilesService>()
+                .AddMvc()
                 .AddRazorPagesOptions(options => options.Conventions.AddPageRoute("/Index", "{*url}"))
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -50,7 +52,7 @@ namespace Skittles
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.ApplicationServices.GetService<FilesService>().Load();
             app.UseMvc();
         }
     }
