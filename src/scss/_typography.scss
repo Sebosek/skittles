@@ -102,6 +102,17 @@ pre code {
     display: block;
 }
 
+blockquote, q {
+    border-left: $gap solid $color__gray;
+    quotes: none;
+    margin-bottom: 5*$gap;
+    padding: 3*$gap 0 3*$gap 4*$gap;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
 /**
  * @modifiers
  *  .text--left text on left

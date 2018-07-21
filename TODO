@@ -6,6 +6,7 @@ Component library:
  ☐ Define documentation items
 
 Documentation:
+ ☐ Code hightlight
  ☐ Add search with autocomplete
  ☐ Mark search results on page and autoscroll to first occurence
  ☐ Load doc on start and use File watch to monitore changes

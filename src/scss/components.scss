@@ -140,6 +140,36 @@
 
         p, a {
             font-size: 1.6rem;
+            line-height: 1.8;
+            margin-bottom: 5*$gap;
+        }
+
+        .goal-icon {
+            --icon-height: 40px;
+            --icon-width: 40px;
+
+            align-items: center;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            height: 17*$gap;
+            margin: 6*$gap;
+            width: 17*$gap;
+
+            &--blue {
+                --color-icon: $color__blue;
+                background: $color__blue--light;
+            }
+
+            &--green {
+                --color-icon: $color__green;
+                background: $color__green--light;
+            }
+
+            &--purple {
+                --color-icon: $color__purple;
+                background: $color__purple--light;
+            }
         }
     }
 
