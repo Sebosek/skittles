@@ -71,4 +71,32 @@
             </div>
         </div>
     </div>
+    <div class="column-8">
+        <div class="skittles-components-palette skittles-components-palette--gray">
+            <div class="skittles-components-palette__main tooltip" data-tooltip="$color__gray">
+                <div class="skittles-components-palette__name">Gray</div>
+                <div class="skittles-components-palette__hex">ebebeb</div>
+            </div>
+            <div class="skittles-components-palette__minor skittles-components-palette--dark tooltip" data-tooltip="$color__gray--dark">
+                <div class="skittles-components-palette__hex">D6D6D6</div>
+            </div>
+            <div class="skittles-components-palette__minor skittles-components-palette--light tooltip" data-tooltip="$color__gray--light">
+                <div class="skittles-components-palette__hex">fcfcfc</div>
+            </div>
+        </div>
+    </div>
+    <div class="column-8">
+        <div class="skittles-components-palette skittles-components-palette--blackish">
+            <div class="skittles-components-palette__main tooltip" data-tooltip="$color__blackish">
+                <div class="skittles-components-palette__name">Blackish</div>
+                <div class="skittles-components-palette__hex">02040F</div>
+            </div>
+            <div class="skittles-components-palette__minor skittles-components-palette--dark tooltip" data-tooltip="$color__blackish--dark">
+                <div class="skittles-components-palette__hex">000000</div>
+            </div>
+            <div class="skittles-components-palette__minor skittles-components-palette--light tooltip" data-tooltip="$color__blackish--light">
+                <div class="skittles-components-palette__hex">474850</div>
+            </div>
+        </div>
+    </div>
 </div>

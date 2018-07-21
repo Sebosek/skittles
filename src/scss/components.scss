@@ -168,17 +168,14 @@
             flex-grow: 1;
         }
 
-        &__hey,
-        &__name {
-            text-transform: uppercase;
-        }
-
         &__name {
             font-size: 2rem;
+            text-transform: lowercase;
         }
 
         &__hex {
             font-size: 1.4rem;
+            text-transform: uppercase;
         }
 
         & > *:last-child {
@@ -207,6 +204,8 @@
         @include color-shapes('red', $color__red, $color__red--light, $color__red--dark);
         @include color-shapes('purple', $color__purple, $color__purple--light, $color__purple--dark);
         @include color-shapes('yellow', $color__yellow, $color__yellow--light, $color__yellow--dark);
+        @include color-shapes('blackish', $color__blackish, $color__blackish--light, $color__blackish--dark);
+        @include color-shapes('gray', $color__gray, $color__gray--light, $color__gray--dark);
     }
 }
 
