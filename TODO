@@ -1,0 +1,16 @@
+Component library:
+
+ ☐ Write an Introduction
+ ☐ Write a Code guidelines
+ ☐ Write a Color guidelines
+ ☐ Define documentation items
+
+Documentation:
+ ☐ Add search with autocomplete
+ ☐ Mark search results on page and autoscroll to first occurence
+ ☐ Load doc on start and use File watch to monitore changes
+
+Legend:
+
+ ☐ Task to be done
+ ✔ Task is done
