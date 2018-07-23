@@ -8,9 +8,9 @@
  *  <h1>Header 1</h1>
  */
 h1, .h1 {
-    @include define-font($color__blackish, 2rem, 1, $font-weight--regular);
+    @include define-font($color__blackish, 2rem, 1.5, $font-weight--regular);
     font-family: $font-family--title;
-    margin: 3*$gap 0 $gap;
+    margin-bottom: 1rem;
 }
 
 /**
@@ -22,8 +22,8 @@ h1, .h1 {
  *  </iframe>
  */
 h2, .h2 {
-    @include define-font($color__blackish, 1.6rem, 1, $font-weight--medium);
-    margin: 3*$gap 0 $gap;
+    @include define-font($color__blackish, 1.6rem, 1.5, $font-weight--medium);
+    margin-bottom: 0.8rem;
 }
 
 /**
@@ -96,10 +96,15 @@ code {
     padding: $gap;
 }
 
-pre code {
-    padding: 3*$gap;
-    width: 100%;
-    display: block;
+pre {
+    margin-bottom: 20px;
+
+    code {
+        font-size: 1.4rem;
+        padding: 3*$gap;
+        width: 100%;
+        display: block;
+    }
 }
 
 blockquote, q {
@@ -115,6 +120,19 @@ blockquote, q {
 
 strong {
     font-weight: 700;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 4*$gap;
+
+    li {
+        margin-bottom: 2*$gap;
+
+        ul {
+            list-style-type: circle;
+        }
+    }
 }
 
 /**

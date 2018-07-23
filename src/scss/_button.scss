@@ -11,10 +11,6 @@ button,
     $height: 10*$gap;
 
     align-items: center;
-    //background: $color__green;
-    //border: none;
-    //border-radius: $height/2;
-    //color: $color__white;
     background: $color__white;
     border: 1px solid $color__gray;
     border-radius: $height/2;
@@ -43,14 +39,21 @@ button,
         display: none;
     }
 
-    &:hover {
+    &:hover,
+    &--hover {
         background: $color__gray;
     }
 
     &:focus,
-    &:active {
+    &--focus {
         box-shadow: 0 0 0 $gap rgba($color__gray, $opacity);
         outline: none;
+    }
+
+    &:active,
+    &.button--active {
+        background: $color__gray;
+        box-shadow: 0 0 0 $gap rgba($color__gray, $opacity);
     }
 
     &--circle {
@@ -78,11 +81,12 @@ button,
     }
 
     &--icon {
-        padding: 0 3.6rem;
+        padding: 0 44px;
 
         .button__icon {
             display: inline-flex;
             position: absolute;
+            top: 7px;
     
             &:first-child {
                 left: 1.2rem;
@@ -100,17 +104,25 @@ button,
 
     &[type=submit],
     &--primary {
+        --color-icon: $color__white;
+
         background: $color__blue;
         border: none;
         color: $color__white;
-        --color-icon: $color__white;
 
-        &:hover {
+        &:hover,
+        &.button--hover {
             background: $color__blue--dark;
         }
 
         &:focus,
-        &:active {
+        &.button--focus {
+            box-shadow: 0 0 0 $gap rgba($color__blue, $opacity);
+        }
+
+        &:active,
+        &.button--active {
+            background: $color__blue--dark;
             box-shadow: 0 0 0 $gap rgba($color__blue, $opacity);
         }
     }
@@ -122,12 +134,19 @@ button,
         color: $color__white;
         --color-icon: $color__white;
 
-        &:hover {
+        &:hover,
+        &.button--hover {
             background: $color__red--dark;
         }
 
         &:focus,
-        &:active {
+        &.button--focus {
+            box-shadow: 0 0 0 $gap rgba($color__red, $opacity);
+        }
+
+        &:active,
+        &.button--active {
+            background: $color__red--dark;
             box-shadow: 0 0 0 $gap rgba($color__red, $opacity);
         }
     }
@@ -165,12 +184,12 @@ button,
 
             &:hover {
                 background: $color__blue--light;
-                animation: button-hover-blue 3.6s infinite normal linear;
+                //animation: button-hover-blue 3.6s infinite normal linear;
             }
 
             &:focus {
                 background: $color__blue--light;
-                animation: button-hover-blue .2s infinite normal linear;
+                animation: button-hover-blue 3.6s infinite normal linear;
             }
         }
 
@@ -231,9 +250,12 @@ button,
     }
 
     &--big {
+        $height: 13*$gap;
+
+        border-radius: $height/2;
         font-size: 1.8rem;
-        height: 13*$gap;
-        line-height: 13*$gap;
+        height: $height;
+        line-height: $height;
         padding-left: 8*$gap;
         padding-right: 8*$gap;
 

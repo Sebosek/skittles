@@ -1,5 +1,10 @@
 @import 'main.scss';
 
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
 .skittles-components {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -62,16 +67,19 @@
     }
 
     &-navigation {
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
         ul ul {
-            //border-bottom: 1px solid $color__gray;
+            display: none;
             padding-left: 24px;
             background: $color__gray--light;
-            display: none;
         }
 
         a {
             color: $color__blackish--light;
-            //border-bottom: 1px solid $color__gray;
             display: block;
             font-size: 1.6rem;
             padding: 16px 24px;
@@ -134,42 +142,41 @@
 
         h2 {
             color: #474850;
-            font-size: 2rem;
-            margin-bottom: 1.4rem;
+            font-size: 2.4rem;
+            margin-bottom: 1.2rem;
         }
 
-        p, a {
-            font-size: 1.6rem;
-            line-height: 1.8;
+        p {
+            font-size: 100%;
             margin-bottom: 5*$gap;
         }
+    }
 
-        .goal-icon {
-            --icon-height: 40px;
-            --icon-width: 40px;
+    .goal-icon {
+        --icon-height: 40px;
+        --icon-width: 40px;
 
-            align-items: center;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            height: 17*$gap;
-            margin: 6*$gap;
-            width: 17*$gap;
+        align-items: center;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        height: 17*$gap;
+        margin: 6*$gap;
+        width: 17*$gap;
 
-            &--blue {
-                --color-icon: $color__blue;
-                background: $color__blue--light;
-            }
+        &--blue {
+            --color-icon: $color__blue;
+            background: $color__blue--light;
+        }
 
-            &--green {
-                --color-icon: $color__green;
-                background: $color__green--light;
-            }
+        &--green {
+            --color-icon: $color__green;
+            background: $color__green--light;
+        }
 
-            &--purple {
-                --color-icon: $color__purple;
-                background: $color__purple--light;
-            }
+        &--purple {
+            --color-icon: $color__purple;
+            background: $color__purple--light;
         }
     }
 
@@ -236,6 +243,22 @@
         @include color-shapes('yellow', $color__yellow, $color__yellow--light, $color__yellow--dark);
         @include color-shapes('blackish', $color__blackish, $color__blackish--light, $color__blackish--dark);
         @include color-shapes('gray', $color__gray, $color__gray--light, $color__gray--dark);
+    }
+
+    &-sample {
+        border: 1px solid $color__gray;
+        border-radius: $gap;
+        margin-bottom: 5*$gap;
+        padding: 5*$gap;
+        position: relative;
+
+        &:before {
+            color: $color__gray--dark;
+            content: 'sample';
+            position: absolute;
+            top: $gap;
+            right: 2*$gap;
+        }
     }
 }
 
