@@ -98,6 +98,12 @@ button,
         }
     }
 
+    &--stretch {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+    }
+
     &--squeez {
         padding: 0 1rem;
     }

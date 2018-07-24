@@ -135,14 +135,19 @@ For all buttons there are three defined sizes default size, small size and also 
 </a>
 ```
 
-## Button squeez
+## Button stretch and squeez
 
 <div class="skittles-components-sample">
-    <button class="button button--squeez" tabindex="1"><span>Primary squeez button</span></button>
+    <button class="button button--stretch"><span>Stretch button</span></button>
+</div>
+<div class="skittles-components-sample">
+    <button class="button button--squeez"><span>Squeez button</span></button>
 </div>
 
+
 ```html
-<button class="button button--squeez"><span>Primary squeez button</span></button>
+<button class="button button--stretch"><span>Stretch button</span></button>
+<button class="button button--squeez"><span>Squeez button</span></button>
 ```
 
 ## Button with icon
