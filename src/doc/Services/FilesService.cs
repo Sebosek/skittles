@@ -36,8 +36,22 @@ namespace Skittles.Services
             return content;
         }
 
+        public byte[] GetFile(string path)
+        {
+            var p = Path.Combine(AssetsRootPath, path.Replace("assets/", ""));
+            if (!File.Exists(p))
+            {
+                throw new FileNotFoundException();
+            }
+
+            return File.ReadAllBytes(p);
+        }
+
         public static string DocRootPath =>
             new FileInfo(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "..\\..\\..\\doc\\")).FullName;
+
+        public static string AssetsRootPath =>
+            new FileInfo(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "..\\..\\..\\assets\\")).FullName;
 
         private MarkdownFile LoadMarkdownFile(FileInfo file)
         {

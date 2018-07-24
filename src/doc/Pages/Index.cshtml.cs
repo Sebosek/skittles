@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using Skittles.Services;
@@ -18,6 +20,11 @@ namespace Skittles.Pages
 
         public IActionResult OnGet(string url)
         {
+            if (url != null && url.StartsWith("assets", StringComparison.CurrentCultureIgnoreCase))
+            {
+                return File(_filesService.GetFile(url), "image/png");
+            }
+
             var result = _filesService.Read(string.IsNullOrEmpty(url) ? "introduction" : url);
             if (result == null)
             {
