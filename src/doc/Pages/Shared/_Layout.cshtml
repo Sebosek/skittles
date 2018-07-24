@@ -61,7 +61,8 @@
                             @{
                                 foreach (var menu in MenuService.Components())
                                 {
-                                    <li><a href="components/@menu.UrlPath#components">@menu.Label</a></li>
+                                    <li><a href="/components/@menu.UrlPath#components">@menu.Label</a></li>
+                                    @*<li><a asp-page="./index" asp-route-url="@Html.Encode($"component/{menu.UrlPath}")" asp-fragment="components">@menu.Label</a></li>*@
                                 }
                             }
                         </ul>
