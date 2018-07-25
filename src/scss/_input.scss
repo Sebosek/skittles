@@ -90,7 +90,7 @@
         flex-direction: row;
         flex-grow: 1;
 
-        @include transition(border-color);
+        @include transition(border-color, box-shadow .5s);
 
         .input__icon {
             $padding: 2*$gap;
@@ -114,6 +114,24 @@
                 padding-bottom: $padding;
             }
         }
+
+        & > .input__addon:first-child {
+            border-radius: $gap 0 0 $gap;
+            border-right: 1px solid $color__gray--dark;
+        }
+
+        & > .input__addon:last-child {
+            border-left: 1px solid $color__gray--dark;
+            border-radius: 0 $gap $gap 0;
+        }
+    }
+
+    &__addon {
+        background: $color__gray--light;
+        align-self: stretch;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 8px;
     }
 
     &__icon {
@@ -181,6 +199,7 @@
 
         .input__envelope {
             border-color: $color__blue;
+            box-shadow: 0 0 0 $gap rgba($color__blue--light, $opacity);
         }
 
         .input__swing {

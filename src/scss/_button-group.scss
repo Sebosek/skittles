@@ -9,6 +9,7 @@
         &:first-child {
             border-top-left-radius: $radius;
             border-bottom-left-radius: $radius;
+            border-right: none;
         }
 
         &:last-child {
