@@ -3,6 +3,7 @@
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
 ## Unreleased
+ - Added documentation for `checkbox`. _sebastian.busek_
  - Added documentation for `tooltip`. _sebastian.busek_
  - Added `input__action` element to `input` block. _sebastian.busek_
  - Added `input__addon` element to `input` block. _sebastian.busek_
