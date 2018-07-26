@@ -14,59 +14,24 @@
  * @markup
  *  <label class="input">
  *   <div class="input__label">Label</div>
- *   <div class="input__envelope">
- *    <input class="input__control" type="text">
+ *    <div class="input__envelope">
+ *     <input class="input__control" type="text">
  *     <span class="input__icon jam jam-close"></span>
+ *    </div>
  *   </div>
  *  </label>
- *  <label class="input input--error">
- *   <div class="input__label">Error label</div>
- *   <div class="input__envelope">
- *    <input class="input__control" type="text">
- *     <span class="input__icon jam jam-close"></span>
- *   </div>
- *  </label>
- *  <label class="input">
- *   <div class="input__label">Label with messages</div>
- *   <div class="input__envelope">
- *    <input class="input__control" type="text">
- *     <span class="input__icon jam jam-close"></span>
- *   </div>
- *   <div class="input__messages">
- *    <div class="input__message"><span class="input__icon jam jam-info"></span> I am a info message</div>
- *    <div class="input__message input__message--success"><span class="input__icon jam jam-info"></span>Hello I am a success message</div>
- *    <div class="input__message input__message--error"><span class="input__icon jam jam-info"></span>Hello I am a error message</div>
- *   </div>
- *  </label>
- *  <label class="input">
- *   <div class="input__label">Input with icons</div>
- *   <div class="input__envelope">
- *    <span class="input__icon jam jam-ghost"></span>
- *    <span class="input__icon jam jam-gamepad"></span>
- *    <span class="input__icon jam jam-heart"></span>
- *    <input class="input__control" type="text">
- *    <span class="input__icon jam jam-close"></span>
- *   </div>
- *  </label>
- *  <label class="input">
- *   <div class="input__label">Input with swing</div>
- *   <div class="input__envelope">
- *    <input class="input__control" type="text">
- *    <span class="input__icon jam jam-close"></span>
- *    <div class="input__swing"></div>
- *   </div>
- *  </label>
- * @modifiers
- *  .input--error an input in error state
- *  .input--borderless an input without borders
- *  .input--spaceless an input without space around
  */
 .input {
     display: block;
-    margin-bottom: 4*$gap;
+    margin-bottom: 5*$gap;
     position: relative;
     width: 100%;
     --color-icon: $color__gray--dark;
+
+    &:after {
+        content: '';
+        clear: both;
+    }
 
     textarea {
         resize: none;
@@ -124,6 +89,20 @@
             border-left: 1px solid $color__gray--dark;
             border-radius: 0 $gap $gap 0;
         }
+
+        &:hover > {
+            .input__addon {
+                background: $color__blue--light;
+            }
+
+            .input__addon:first-child {
+                border-right: 1px solid $color__blue;
+            }
+    
+            .input__addon:last-child {
+                border-left: 1px solid $color__blue;
+            }
+        }
     }
 
     &__addon {
@@ -131,7 +110,19 @@
         align-self: stretch;
         display: inline-flex;
         align-items: center;
-        padding: 0 8px;
+        padding: 0 2*$gap;
+    }
+
+    &__action {
+        font-size: 1.2rem;
+        margin-top: 2px;
+        float: right;
+        padding-left: 2*$gap;
+
+        &:after {
+            content: '';
+            clear: both;
+        }
     }
 
     &__icon {
@@ -159,6 +150,10 @@
 
         &:empty {
             margin-top: 0;
+        }
+
+        &:not(:empty) {
+            margin-bottom: -5*$gap;
         }
     }
 
@@ -199,7 +194,8 @@
 
         .input__envelope {
             border-color: $color__blue;
-            box-shadow: 0 0 0 $gap rgba($color__blue--light, $opacity);
+            //box-shadow: 0 0 0 $gap rgba($color__blue--light, $opacity);
+            box-shadow: 0 0 0 $gap $color__blue--light;
         }
 
         .input__swing {
@@ -209,10 +205,6 @@
             &:after {
                 background: $color__blue--light;
             }
-        }
-
-        .input__messages {
-            color: $color__gray--dark;
         }
 
         &.input--success {
