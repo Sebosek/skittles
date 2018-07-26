@@ -1,4 +1,4 @@
-# Tooltip
+# Tooltip component
 
 One defines tooltip by adding `tooltip` class and content itself is defined as `data-tooltip` attribute.
 

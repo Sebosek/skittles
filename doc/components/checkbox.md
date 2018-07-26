@@ -1,4 +1,4 @@
-# Checkbox
+# Checkbox component
 
 <div class="skittles-components-sample">
     <label class="checkbox">
