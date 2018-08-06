@@ -1,0 +1,106 @@
+@import 'utils/transition';
+@import 'utils/typography';
+@import 'variables/grid';
+@import 'variables/colors';
+@import 'variables/typography';
+
+.radio-card {
+    border: 1px solid $color__gray;
+    border-radius: 2*$gap;
+    display: inline-flex;
+    padding: 2*$gap;
+    position: relative;
+    margin-bottom: 4*$gap;
+    margin-right: 2*$gap;
+    user-select: none;
+    flex-direction: column;
+    min-height: 24*$gap;
+    min-width: 20*$gap;
+
+    @include transition(border-color, box-shadow .5s);
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    &__content {
+        flex-grow: 1;
+        display: flex;
+    }
+
+    input[type=radio] + &__control {
+        align-items: center;
+        display: inline-flex;
+        border-radius: 50%;
+        height: 4*$gap;
+        justify-content: center;
+        margin-right: 2*$gap;
+        position: relative;
+        width: 4*$gap;
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            background: $color__gray;
+            opacity: 0;
+        }
+
+        &:after {
+            background: $color__white;
+            border: 1px solid $color__gray--dark;
+            border-radius: 50%;
+            color: $color__white;
+            content: '';
+
+            position: absolute;
+            height: 100%;
+            width: 100%;
+
+            @include transition(border);
+        }
+    }
+
+    &:hover,
+    &:focus-within {
+        border-color: $color__blue;
+        box-shadow: 0 0 0 $gap $color__blue--light;
+
+        .radio-card__control:after {
+            border: 1px solid $color__blue;
+        }
+    }
+
+    input[type=radio] {
+        z-index: -1;
+        opacity: 0;
+        height: 0;
+        width: 0;
+        margin: 0;
+    }
+
+    input[type=radio]:checked + &__control:after {
+        border: $gap solid $color__blue;
+
+        animation-name: control-scale;
+        animation-duration: .3s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+    }
+
+    &[disabled],
+    &--disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        background: $color__gray--light;
+        border: 1px solid $color__gray;
+        box-shadow: none;
+
+        input[type=radio] + .radio-card__control:after {
+            background: $color__gray--light;
+            border: 1px solid $color__gray;
+            box-shadow: none;
+        }
+    }
+}

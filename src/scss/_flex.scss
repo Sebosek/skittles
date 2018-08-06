@@ -1,7 +1,7 @@
 .flex {
     display: flex;
     justify-content: space-between;
-
+    
     &--top {
         align-items: flex-start;
     }
@@ -12,5 +12,13 @@
 
     &--bottom {
         align-items: flex-end;
+    }
+
+    &--right {
+        margin-left: auto;
+    }
+
+    &--center {
+        margin: 0 auto;
     }
 }

@@ -263,6 +263,34 @@ body {
             right: 2*$gap;
         }
     }
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        height: 80px;
+        width: 82px;
+
+        &__icon {
+            --icon-height: 36px;
+            --icon-width: 36px;
+
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &--disabled {
+                --color-icon: $color__gray--dark;
+            }
+        }
+
+        &__title {
+            color: $color__gray--dark;
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
 }
 
 #philosophy:target,
