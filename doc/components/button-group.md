@@ -37,3 +37,21 @@ With that you're able to create a dropdown button.
     </a>
 </div>
 ```
+
+
+## Disabled button group
+<div class="skittles-components-sample">
+    <div class="button-group" disabled>
+        <a class="button">First</a>
+        <a class="button">Second</a>
+        <a class="button">Third</a>
+    </div>
+</div>
+
+```html
+<div class="button-group" disabled>
+    <a class="button">First</a>
+    <a class="button">Second</a>
+    <a class="button">Third</a>
+</div>
+```
