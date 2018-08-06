@@ -35,6 +35,10 @@
             color: $color__gray--dark;
             cursor: not-allowed;
             pointer-events: none;
+
+            &:first-child {
+                border-right: none;
+            }
         }
     }
 }
