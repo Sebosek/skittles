@@ -24,6 +24,31 @@
 </label>
 ```
 
+## Disabled input
+<div class="skittles-components-sample">
+    <label class="input input--disabled">
+        <div class="input__label">Input label</div>
+        <div class="input__envelope">
+            <input class="input__control" type="text" value="Disabled input" disabled>
+            <div class="input__icon">
+                <svg class="icon"><use xlink:href="#close" /></svg>
+            </div>
+        </div>
+    </label>
+</div>
+
+```html
+<label class="input input--disabled">
+    <div class="input__label">Input label</div>
+    <div class="input__envelope">
+        <input class="input__control" type="text" value="Disabled input" disabled>
+        <div class="input__icon">
+            <svg class="icon"><use xlink:href="#close" /></svg>
+        </div>
+    </div>
+</label>
+```
+
 ## Input with an error
 
 <div class="skittles-components-sample">

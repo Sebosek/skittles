@@ -3,6 +3,7 @@
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
 ## Unreleased
+ - Added `disabled` modifier for `input`. _sebastian.busek_
  - Added `disabled` modifier for `checkbox`. _sebastian.busek_
  - Added `disabled` state and modifier for `button-group`. _sebastian.busek_
  - Added `disabled` state and modifier for `button`. _sebastian.busek_

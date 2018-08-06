@@ -268,14 +268,19 @@
         }
     }
 
-    &--borderless {
-        .input__envelope {
-            border: none;
-        }
-    }
+    &--disabled {
+        cursor: not-allowed;
+        pointer-events: none;
 
-    &--spaceless {
-        margin-bottom: 0;
+        .input__envelope {
+            background: $color__gray--light;
+            border: 1px solid $color__gray;
+            box-shadow: none;
+
+            > input {
+                color: $color__gray--dark;
+            }
+        }
     }
 
     &--success {
