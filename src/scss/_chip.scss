@@ -18,14 +18,7 @@
  *
  * @markup
  *  <div>
- *   <div class="chip chip--large">Harry potter</div>
- *   <div class="chip">Hermiona Grenger</div>
- *   <div class="chip chip--small">Ron Visel</div>
- *  </div>
- *  <div>
- *   <div class="chip chip--large">Harry potter<div class="chip__close"></div></div>
- *   <div class="chip">Hermiona Grenger<div class="chip__close"></div></div>
- *   <div class="chip chip--small">Ron Visel<div class="chip__close"></div></div>
+ *   <div class="chip"><span>Hermiona Grenger</span></div>
  *  </div>
  * @modifiers
  *  .chip--blue a blue chip
@@ -63,23 +56,16 @@
         align-items: center;
         border-radius: 50%;
         cursor: pointer;
-        display: flex;
-        justify-content: center;
+        display: inline-flex;
         margin-left: -2*$gap;
-        padding: $gap;
-        height: $height;
-        min-width: $height;
-        width: $height;
+        margin-right: $gap;
+        transition: background 0.3s;
 
         @include transition(background);
 
         &:hover,
         &:focus {
             background: $color__red;
-        }
-
-        .icon {
-            position: absolute;
         }
     }
 
