@@ -28,6 +28,15 @@
         </div>
         <div class="checkbox__label">Strawberry</div>
     </label>
+    <label class="checkbox checkbox--disabled">
+        <input type="checkbox" disabled/>
+        <div class="checkbox__control">
+            <svg class="icon">
+                <use xlink:href="#check" />
+            </svg>
+        </div>
+        <div class="checkbox__label">Disabled</div>
+    </label>
 </div>
 
 ```html
@@ -57,5 +66,14 @@
         </svg>
     </div>
     <div class="checkbox__label">Strawberry</div>
+</label>
+<label class="checkbox checkbox--disabled">
+    <input type="checkbox" disabled/>
+    <div class="checkbox__control">
+        <svg class="icon">
+            <use xlink:href="#check" />
+        </svg>
+    </div>
+    <div class="checkbox__label">Disabled</div>
 </label>
 ```
