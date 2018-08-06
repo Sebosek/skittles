@@ -16,6 +16,11 @@
         <div class="radio__control"></div>
         <div class="radio__label">Cat</div>
     </label>
+    <label class="radio radio--disabled">
+        <input type="radio" name="radio" disabled />
+        <div class="radio__control"></div>
+        <div class="radio__label">Disabled</div>
+    </label>
 </div>
 
 ```html
@@ -33,5 +38,10 @@
     <input type="radio" name="radio" />
     <div class="radio__control"></div>
     <div class="radio__label">Cat</div>
+</label>
+<label class="radio radio--disabled">
+    <input type="radio" name="radio" disabled />
+    <div class="radio__control"></div>
+    <div class="radio__label">Disabled</div>
 </label>
 ```

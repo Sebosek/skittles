@@ -89,4 +89,20 @@
     // input[type=radio]:checked + &__control:before {
     //     @include radio-ripple();
     // }
+
+    &[disabled],
+    &--disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+
+        input[type=radio] + .radio__control:after {
+            background: $color__gray--light;
+            border: 1px solid $color__gray;
+            box-shadow: none;
+        }
+
+        .radio__label {
+            color: $color__gray--dark;
+        }
+    }
 }
