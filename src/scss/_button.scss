@@ -276,13 +276,11 @@ button,
 
     &[disabled],
     &--disabled {
-        background: $color__gray;
+        background: $color__gray--light;
+        border: 1px solid $color__gray;
+        box-shadow: none;
         color: $color__gray--dark;
         cursor: not-allowed;
-
-        &:focus,
-        &:active {
-            box-shadow: none;
-        }
+        pointer-events: none;
     }
 }

@@ -90,6 +90,22 @@ Neutral buttons are intended for **neutral** actions which are any other action.
 <button class="button button--active" tabindex="6"><span>Active</span></button>
 ```
 
+## Disabled button
+<div class="skittles-components-sample">
+    <a class="button button--primary" disabled><span>Primary</span></a>
+    <button class="button button--hover" disabled><span>Hover</span></button>
+    <button class="button button--focus" disabled><span>Focus</span></button>
+    <button class="button button--active" disabled><span>Active</span></button>
+</div>
+
+```html
+<a class="button button--primary" disabled><span>Primary</span></a>
+<button class="button button--hover" disabled><span>Hover</span></button>
+<button class="button button--focus" disabled><span>Focus</span></button>
+<button class="button button--active" disabled><span>Active</span></button>
+```
+
+
 ## Button sizes
 For all buttons there are three defined sizes default size, small size and also big size button.
 <div class="skittles-components-sample">

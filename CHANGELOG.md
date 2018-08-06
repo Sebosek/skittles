@@ -3,6 +3,7 @@
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
 ## Unreleased
+ - Added `disabled` state and modifier for `button`. _sebastian.busek_
  - Added documentation for `radio`. _sebastian.busek_
  - Added documentation for `checkbox`. _sebastian.busek_
  - Added documentation for `tooltip`. _sebastian.busek_
