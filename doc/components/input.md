@@ -29,7 +29,7 @@
     <label class="input input--required">
         <div class="input__label">Input label</div>
         <div class="input__envelope">
-            <input class="input__control" type="text" placeholder="Required" disabled>
+            <input class="input__control" type="text" placeholder="Required">
             <div class="input__icon">
                 <svg class="icon"><use xlink:href="#close" /></svg>
             </div>
@@ -70,6 +70,25 @@
         <div class="input__icon">
             <svg class="icon"><use xlink:href="#close" /></svg>
         </div>
+    </div>
+</label>
+```
+
+### Readonly input
+<div class="skittles-components-sample">
+    <label class="input input--readonly">
+        <div class="input__label">Readonly input</div>
+        <div class="input__envelope">
+            <input class="input__control" type="text" value="Readonly input" readonly>
+        </div>
+    </label>
+</div>
+
+```html
+<label class="input input--readonly">
+    <div class="input__label">Readonly input</div>
+    <div class="input__envelope">
+        <input class="input__control" type="text" value="Readonly input" readonly>
     </div>
 </label>
 ```

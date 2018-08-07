@@ -266,6 +266,7 @@
 
         .input__envelope {
             border-color: $color__red;
+            box-shadow: 0 0 0 $gap $color__red--light;
         }
     }
 
@@ -290,6 +291,27 @@
             color: $color__red;
             position: relative;
             left: $gap;
+        }
+    }
+
+    &--readonly {
+        transition: none;
+
+        &:hover {
+            .input__envelope {
+                border-color: $color__gray--dark;
+            }
+        }
+
+        &:focus-within {
+            .input__label {
+                color: $color__blackish--light;
+            }
+    
+            .input__envelope {
+                border-color: $color__gray--dark;
+                box-shadow: none;
+            }
         }
     }
 
