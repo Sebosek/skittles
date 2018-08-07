@@ -1,5 +1,6 @@
 @import '../variables/common';
 @import '../variables/swing';
+@import '../variables/colors';
 @import 'internal/animations';
 
 @keyframes swing-move {
@@ -58,4 +59,30 @@
 @mixin radio-ripple() {
     animation-name: control-ripple;
     @extend %__control-ripple;
+}
+
+@keyframes icon-gray-dark-to-blackish {
+    0% { fill: $color__gray--dark; }
+    100% { fill: $color__blackish; }
+}
+
+@keyframes icon-gray-dark-to-blackish--revert {
+    0% { fill: $color__blackish; }
+    100% { fill: $color__gray--dark; }
+}
+
+@mixin icon-gray-dark-to-blackish--revert() {
+    animation-name: icon-gray-dark-to-blackish--revert;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@mixin icon-gray-dark-to-blackish() {
+    animation-name: icon-gray-dark-to-blackish;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }

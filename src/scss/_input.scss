@@ -33,10 +33,6 @@
         clear: both;
     }
 
-    textarea {
-        resize: none;
-    }
-
     &__label {
         @include define-font($color__blackish--light, 1.4rem, 1.5, $font-weight--medium);
 
@@ -64,10 +60,6 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-
-            &:hover {
-                --color-icon: $color__blackish;
-            }
 
             &--top {
                 align-self: flex-start;
@@ -111,6 +103,8 @@
         display: inline-flex;
         align-items: center;
         padding: 0 2*$gap;
+
+        @include transition(border-color, background .5s);
     }
 
     &__action {
@@ -128,6 +122,10 @@
     &__icon {
         display: flex;
         align-items: center;
+
+        .icon {
+            @include icon-gray-dark-to-blackish--revert();
+        }
     }
 
     &__control {
@@ -186,7 +184,9 @@
     &--focus,
     &:focus,
     &:focus-within {
-        --color-icon: $color__blackish;
+        .input__icon .icon {
+            @include icon-gray-dark-to-blackish()
+        }
         
         .input__label {
             color: $color__blue;
@@ -194,7 +194,6 @@
 
         .input__envelope {
             border-color: $color__blue;
-            //box-shadow: 0 0 0 $gap rgba($color__blue--light, $opacity);
             box-shadow: 0 0 0 $gap $color__blue--light;
         }
 
@@ -225,7 +224,9 @@
     }
 
     &:hover {
-        --color-icon: $color__blackish;
+        .input__icon .icon {
+            @include icon-gray-dark-to-blackish()
+        }
 
         .input__envelope {
             border-color: $color__blue;
@@ -280,6 +281,15 @@
             > input {
                 color: $color__gray--dark;
             }
+        }
+    }
+
+    &--required {
+        .input__label:after {
+            content: '*';
+            color: $color__red;
+            position: relative;
+            left: $gap;
         }
     }
 

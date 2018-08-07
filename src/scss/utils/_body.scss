@@ -9,9 +9,12 @@ body {
     background: $color__gray--light;
     display: flex;
     justify-content: center;
-    //padding-top: $navbar__height;
 
     --color-icon: $color__blackish;
     --icon-height: 24px;
     --icon-width: 24px;
+
+    &.preload * {
+        animation-duration: 0s !important;
+    }
 }

@@ -3,6 +3,8 @@
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
 ## Unreleased
+ - Fixed transition for `input__addon`. _sebastian.busek_
+ - Added animation for icons in `input`. _sebastian.busek_
  - Added `radio-card` component with documentation. _sebastian.busek_
  - Added documentation for `chip`. _sebastian.busek_
  - Added `disabled` modifier for `radio`. _sebastian.busek_

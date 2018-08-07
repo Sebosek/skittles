@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/css/main.css" />
     <link rel="stylesheet" href="~/css/components.css" />
 </head>
-<body class="skittles-components">
+<body class="skittles-components preload">
     <aside class="skittles-components-aside">
         <div>
             <a class="skittles-components-logo" href="#">
@@ -22,7 +22,7 @@
                 <a href="#">A component library</a>
             </div>
             <div class="skittles-components-search">
-                <label class="input">
+                <label class="input input--disabled">
                     <div class="input__envelope">
                         <span class="input__icon">
                             <svg class="icon"><use xlink:href="#ghost" /></svg>
@@ -83,6 +83,11 @@
     </section>
 
     <script src="~/highlight.pack.js"></script>
+    <script type="text/javascript">
+    setTimeout(() => {
+        document.body.className = "skittles-components";
+    }, 500);
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
