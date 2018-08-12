@@ -3,32 +3,42 @@
 @import 'utils/body';
 @import 'utils/utilities';
 
+// implemented and documentated
 @import 'typography';
-@import 'content';
 @import 'grid';
-@import 'navbar';
-@import 'card';
-@import 'layout';
-@import 'icon-jam-svg';
-@import 'flex';
-@import 'form';
-
-@import 'alert';
 @import 'button';
 @import 'button-group';
 @import 'avatar';
 @import 'input';
-@import 'spinner';
-@import 'splitter';
-@import 'menu';
 @import 'chip';
 @import 'tooltip';
 @import 'checkbox';
 @import 'radio';
 @import 'radio-card';
-@import 'tile';
+@import 'switcher';
+
+// to be documented
+@import 'form';
 @import 'backdrop';
 @import 'modal';
-@import 'captcha';
+@import 'alert';
 
-// @import 'box-ratio';
+// shouldn't be documentated
+@import 'icon-jam-svg';
+
+// helpers with missing documentation
+@import 'flex';
+@import 'box-ratio';
+
+// to be rewritten
+@import 'spinner';
+@import 'splitter';
+@import 'menu';
+@import 'tile';
+@import 'card';
+
+// not decided yet
+// @import 'content';
+// @import 'navbar';
+// @import 'layout';
+// @import 'captcha';

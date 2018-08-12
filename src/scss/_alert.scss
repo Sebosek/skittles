@@ -10,6 +10,12 @@
     width: 360px;
     z-index: 100;
 
+    &--static {
+        position: relative;
+        top: auto;
+        z-index: auto;
+    }
+
     .alert {
         animation-duration: 2*$duration;
         animation-iteration-count: 1;
