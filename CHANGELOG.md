@@ -3,8 +3,9 @@
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
 ## Unreleased
- - Added `menu` compoenent with documentation. _sebastian.busek_
- - Added `switcher` compoenent with documentation. _sebastian.busek_
+ - Added `dropdown` component with documentation. _sebastian.busek_
+ - Added `menu` component with documentation. _sebastian.busek_
+ - Added `switcher` component with documentation. _sebastian.busek_
  - Added `readonly` modifier for `input`. _sebastian.busek_
  - Fixed transition for `input__addon`. _sebastian.busek_
  - Added animation for icons in `input`. _sebastian.busek_

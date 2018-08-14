@@ -43,9 +43,7 @@
         left: ($height - $gap) / 2;
         width: $gap;
         height: $height - $gap;
-        box-shadow: 0 0 2px $color__gray--dark;
-
-        border-radius: 2px;
+        box-shadow: 0 0 1px $color__gray--dark;
         transition: all 0.3s ease-in-out;
     }
 
