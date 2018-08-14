@@ -1,6 +1,7 @@
 .flex {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     
     &--top {
         align-items: flex-start;
@@ -19,6 +20,6 @@
     }
 
     &--center {
-        margin: 0 auto;
+        justify-content: center;
     }
 }

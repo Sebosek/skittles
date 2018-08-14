@@ -7,79 +7,71 @@
 
 .menu {
     background: $color__white;
-    border: 1px solid $color__gray;
+    border: 1px solid $color__gray--dark;
     border-radius: $gap;
     cursor: default;
-    display: inline-block;
+    display: block;
     left: 0;
-    line-height: 1;
-    padding: $gap;
-    position: absolute;
-    top: 100%;
-    z-index: $z-index--menu;
+    padding: $gap 0;
+    min-width: 300px;
+    position: relative;
 
     @include transition(border);
+    @include shadow--medium();
 
-    &__item {
-        color: $color__blackish !important;
-        cursor: pointer;
-        display: block;
-        line-height: 8*$gap;
-        padding: 0 2*$gap;
-        position: relative;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-
-        @include transition(background);
-
-        &:focus,
-        &:hover {
-            background: $color__blue--light;
-            text-decoration: none !important;
-        }
-
-        &:active,
-        &--active {
-            font-weight: 800;
-        }
+    &__title {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 4*$gap 5*$gap $gap;
     }
 
-    &:focus,
-    &:hover {
-        border-color: $color__blue;
+    &__content {
+        max-height: 350px;
+        overflow: auto;
     }
 
-    &--over {
-        @include shadow--small();
+    &__footer {
+        font-size: 1.4rem;
+        color: $color__gray--dark;
+        padding: 0 5*$gap;
+        min-height: 10*$gap;
+        display: flex;
+        align-items: center;
+        padding-top: $gap;
+        border-top: 1px solid $color__gray;
+    }
 
-        &:focus,
-        &:hover {
-            @include shadow--small($color__blue--light);
+    ul.menu__items {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+            .menu__item {
+                color: $color__blackish--light;
+                padding: 2*$gap 5*$gap;
+                width: 100%;
+                font-size: 1.4rem;
+
+                &:hover {
+                    text-decoration: none;
+                    background: $color__gray--light;
+                }
+            }
         }
     }
 
     &--spread {
-        display: block;
         width: 100%;
     }
 
-    &--loading {
-        .menu__swing {
-            @include swing();
-        }
-
-        &:focus,
-        &:hover {
-            .menu__swing {
-                background: $color__blue;
-
-                &:before,
-                &:after {
-                    background: $color__blue--light;
-                }
-            }
-        }
+    &--float {
+        position: absolute;
     }
 
     &--hide {
